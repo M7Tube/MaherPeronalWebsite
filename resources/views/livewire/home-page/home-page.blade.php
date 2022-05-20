@@ -178,105 +178,42 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
+                    @forelse ($services as $service)
+                        @if (app()->getLocale() == 'ar')
+                            <div class="col-md-4">
+                                <div class="service-box">
+                                    <div class="service-ico">
+                                        <span class="ico-circle"><i class="{{ $service->icon }}"></i></span>
+                                    </div>
+                                    <div class="service-content">
+                                        <h2 class="s-title">{{ $service->ar_name }}</h2>
+                                        <p class="s-description text-center">
+                                            {{ $service->ar_desc }}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Web Design</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
+                        @else
+                            <div class="col-md-4">
+                                <div class="service-box">
+                                    <div class="service-ico">
+                                        <span class="ico-circle"><i class="{{ $service->icon }}"></i></span>
+                                    </div>
+                                    <div class="service-content">
+                                        <h2 class="s-title">{{ $service->en_name }}</h2>
+                                        <p class="s-description text-center">
+                                            {{ $service->en_desc }}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Web Development</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Photography</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Responsive Design</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-brightness-high"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Graphic Design</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-calendar4-week"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Marketing Services</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        @endif
+                    @empty
+                        <h4 class="text-center">{{ __('Empty') }}</h4>
+                    @endforelse
                 </div>
             </div>
-        </section><!-- End Services Section -->
+        </section>
 
         <!-- ======= Counter Section ======= -->
         <div class="section-counter paralax-mf bg-image"
@@ -290,9 +227,10 @@
                                 <span class="ico-circle"><i class="bi bi-check"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">WORKS COMPLETED</span>
+                                <p data-purecounter-start="0"
+                                    data-purecounter-end="{{ $statistics->work_complated }}"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text">{{ __('WORKS COMPLETED') }}</span>
                             </div>
                         </div>
                     </div>
@@ -302,9 +240,10 @@
                                 <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">YEARS OF EXPERIENCE</span>
+                                <p data-purecounter-start="0"
+                                    data-purecounter-end="{{ $statistics->years_of_experience }}"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text">{{ __('YEARS OF EXPERIENCE') }}</span>
                             </div>
                         </div>
                     </div>
@@ -314,9 +253,9 @@
                                 <span class="ico-circle"><i class="bi bi-people"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">TOTAL CLIENTS</span>
+                                <p data-purecounter-start="0" data-purecounter-end="{{ $statistics->total_clients }}"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text">{{ __('TOTAL CLIENTS') }}</span>
                             </div>
                         </div>
                     </div>
@@ -326,9 +265,9 @@
                                 <span class="ico-circle"><i class="bi bi-award"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">AWARD WON</span>
+                                <p data-purecounter-start="0" data-purecounter-end="{{ $statistics->award_won }}"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text">{{ __('AWARD WON') }}</span>
                             </div>
                         </div>
                     </div>
@@ -362,7 +301,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-4">
                         <div class="work-box">
                             <a href="{{ asset('img/work-1.jpg') }}" data-gallery="portfolioGallery"
@@ -526,7 +465,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
             </div>
         </section><!-- End Portfolio Section -->
 

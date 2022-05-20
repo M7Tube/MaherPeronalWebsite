@@ -62,15 +62,15 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('home-page.home-page')->html();
-} elseif ($_instance->childHasBeenRendered('5CPoJKW')) {
-    $componentId = $_instance->getRenderedChildComponentId('5CPoJKW');
-    $componentTag = $_instance->getRenderedChildComponentTagName('5CPoJKW');
+} elseif ($_instance->childHasBeenRendered('dWXItYR')) {
+    $componentId = $_instance->getRenderedChildComponentId('dWXItYR');
+    $componentTag = $_instance->getRenderedChildComponentTagName('dWXItYR');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('5CPoJKW');
+    $_instance->preserveRenderedChild('dWXItYR');
 } else {
     $response = \Livewire\Livewire::mount('home-page.home-page');
     $html = $response->html();
-    $_instance->logRenderedChild('5CPoJKW', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('dWXItYR', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

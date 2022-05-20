@@ -164,105 +164,44 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
+                    <?php $__empty_1 = true; $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                        <?php if(app()->getLocale() == 'ar'): ?>
+                            <div class="col-md-4">
+                                <div class="service-box">
+                                    <div class="service-ico">
+                                        <span class="ico-circle"><i class="<?php echo e($service->icon); ?>"></i></span>
+                                    </div>
+                                    <div class="service-content">
+                                        <h2 class="s-title"><?php echo e($service->ar_name); ?></h2>
+                                        <p class="s-description text-center">
+                                            <?php echo e($service->ar_desc); ?>
+
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Web Design</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
+                        <?php else: ?>
+                            <div class="col-md-4">
+                                <div class="service-box">
+                                    <div class="service-ico">
+                                        <span class="ico-circle"><i class="<?php echo e($service->icon); ?>"></i></span>
+                                    </div>
+                                    <div class="service-content">
+                                        <h2 class="s-title"><?php echo e($service->en_name); ?></h2>
+                                        <p class="s-description text-center">
+                                            <?php echo e($service->en_desc); ?>
+
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Web Development</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Photography</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Responsive Design</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-brightness-high"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Graphic Design</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="service-box">
-                            <div class="service-ico">
-                                <span class="ico-circle"><i class="bi bi-calendar4-week"></i></span>
-                            </div>
-                            <div class="service-content">
-                                <h2 class="s-title">Marketing Services</h2>
-                                <p class="s-description text-center">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem
-                                    fugiat! Quia,
-                                    provident vitae! Magni
-                                    tempora perferendis eum non provident.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                        <h4 class="text-center"><?php echo e(__('Empty')); ?></h4>
+                    <?php endif; ?>
                 </div>
             </div>
-        </section><!-- End Services Section -->
+        </section>
 
         <!-- ======= Counter Section ======= -->
         <div class="section-counter paralax-mf bg-image"
@@ -276,9 +215,10 @@
                                 <span class="ico-circle"><i class="bi bi-check"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="450" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">WORKS COMPLETED</span>
+                                <p data-purecounter-start="0"
+                                    data-purecounter-end="<?php echo e($statistics->work_complated); ?>"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text"><?php echo e(__('WORKS COMPLETED')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -288,9 +228,10 @@
                                 <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">YEARS OF EXPERIENCE</span>
+                                <p data-purecounter-start="0"
+                                    data-purecounter-end="<?php echo e($statistics->years_of_experience); ?>"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text"><?php echo e(__('YEARS OF EXPERIENCE')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -300,9 +241,9 @@
                                 <span class="ico-circle"><i class="bi bi-people"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="550" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">TOTAL CLIENTS</span>
+                                <p data-purecounter-start="0" data-purecounter-end="<?php echo e($statistics->total_clients); ?>"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text"><?php echo e(__('TOTAL CLIENTS')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -312,9 +253,9 @@
                                 <span class="ico-circle"><i class="bi bi-award"></i></span>
                             </div>
                             <div class="counter-num">
-                                <p data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1"
-                                    class="counter purecounter"></p>
-                                <span class="counter-text">AWARD WON</span>
+                                <p data-purecounter-start="0" data-purecounter-end="<?php echo e($statistics->award_won); ?>"
+                                    data-purecounter-duration="1" class="counter purecounter"></p>
+                                <span class="counter-text"><?php echo e(__('AWARD WON')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -348,171 +289,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="<?php echo e(asset('img/work-1.jpg')); ?>" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="<?php echo e(asset('img/work-1.jpg')); ?>" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Lorem impsum dolor</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="<?php echo e(asset('img/work-2.jpg')); ?>" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="<?php echo e(asset('img/work-2.jpg')); ?>" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Loreda Cuno Nere</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="<?php echo e(asset('img/work-3.jpg')); ?>" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="<?php echo e(asset('img/work-3.jpg')); ?>" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Mavrito Lana Dere</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="<?php echo e(asset('img/work-4.jpg')); ?>" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="<?php echo e(asset('img/work-4.jpg')); ?>" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Bindo Laro Cado</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="<?php echo e(asset('img/work-5.jpg')); ?>" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="<?php echo e(asset('img/work-5.jpg')); ?>" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Studio Lena Mado</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="<?php echo e(asset('img/work-6.jpg')); ?>" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="<?php echo e(asset('img/work-6.jpg')); ?>" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Studio Big Bang</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2017</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                
             </div>
         </section><!-- End Portfolio Section -->
 

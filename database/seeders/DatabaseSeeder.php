@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AppSettingsSeeder::class,
+            ServicesSeeder::class,
+            StatisticsSeeder::class,
         ]);
     }
 }
