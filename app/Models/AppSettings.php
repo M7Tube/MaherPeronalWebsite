@@ -24,6 +24,7 @@ class AppSettings extends Model
         'email',
         'phone',
         'small_personal_pic',
+        'big_personal_pic',
         'facebook',
         'twitter',
         'instagram',

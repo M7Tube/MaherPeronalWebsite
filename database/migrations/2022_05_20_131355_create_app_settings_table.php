@@ -28,6 +28,7 @@ return new class extends Migration
             $table->text('email');
             $table->text('phone');
             $table->text('small_personal_pic');
+            $table->text('big_personal_pic');
             $table->text('facebook');
             $table->text('twitter');
             $table->text('instagram');

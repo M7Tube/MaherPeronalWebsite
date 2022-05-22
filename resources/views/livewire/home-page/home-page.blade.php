@@ -44,7 +44,8 @@
     </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <div id="hero" class="hero route bg-image" style="background-image: url({{ asset('img/hero-bg.jpg') }}">
+    <div id="hero" class="hero route bg-image"
+        style="background-image: url({{ asset('storage/hero-bg.jpg') }}">
         <div class="overlay-itro"></div>
         <div class="hero-content display-table">
             <div class="table-cell">
@@ -81,8 +82,8 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-md-5">
                                             <div class="about-img">
-                                                <img src="{{ asset('img/testimonial-2.jpg') }}"
-                                                    class="img-fluid rounded b-shadow-a" alt="">
+                                                <img src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $info->small_personal_pic)) !!}"
+                                                    class="img-fluid rounded b-shadow-a" alt="personal picture">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-7">
