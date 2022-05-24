@@ -28,7 +28,7 @@
 
     <!-- ======= Hero Section ======= -->
     <div id="hero" class="hero route bg-image"
-        style="background-image: url(<?php echo e(asset('/storage/hero-bg.jpg')); ?>">
+        style="background-image: url(<?php echo e(asset('storage/hero-bg.jpg')); ?>">
         <div class="overlay-itro"></div>
         <div class="hero-content display-table">
             <div class="table-cell">

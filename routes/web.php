@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homepage');
 })->name('homepage');
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
-Route::get('/portofolio', function () {
-    return view('portofolio');
-})->name('portofolio');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

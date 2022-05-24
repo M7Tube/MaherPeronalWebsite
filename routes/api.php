@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\AppSettings;
+use App\Models\Statistics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
