@@ -12,13 +12,13 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero"><?php echo e(__('Home')); ?></a></li>
-                    <li><a class="nav-link scrollto" href="#about"><?php echo e(__('About')); ?></a></li>
-                    <li><a class="nav-link scrollto" href="#services"><?php echo e(__('Services')); ?></a></li>
-                    <li><a class="nav-link scrollto " href="#work"><?php echo e(__('Work')); ?></a></li>
-                    <li><a class="nav-link scrollto " href="#blog"><?php echo e(__('Blog')); ?></a></li>
+                    <li><a class="nav-link scrollto active" href="#hero"><?php echo e(__('lang.Home')); ?></a></li>
+                    <li><a class="nav-link scrollto" href="#about"><?php echo e(__('lang.About')); ?></a></li>
+                    <li><a class="nav-link scrollto" href="#services"><?php echo e(__('lang.Services')); ?></a></li>
+                    <li><a class="nav-link scrollto " href="#work"><?php echo e(__('lang.Work')); ?></a></li>
+                    <li><a class="nav-link scrollto " href="#blog"><?php echo e(__('lang.Blog')); ?></a></li>
                     
-                    <li><a class="nav-link scrollto" href="#contact"><?php echo e(__('Contact')); ?></a></li>
+                    <li><a class="nav-link scrollto" href="#contact"><?php echo e(__('lang.Contact')); ?></a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -72,34 +72,34 @@
                                         <div class="col-sm-6 col-md-7">
                                             <div class="about-info">
                                                 <?php if(app()->getLocale() == 'ar'): ?>
-                                                    <p><span class="title-s"><?php echo e(__('Name:')); ?> </span>
+                                                    <p><span class="title-s"><?php echo e(__('lang.Name:')); ?> </span>
                                                         <span><?php echo e($info->ar_peronal_name); ?></span>
                                                     </p>
                                                 <?php else: ?>
-                                                    <p><span class="title-s"><?php echo e(__('Name:')); ?> </span>
+                                                    <p><span class="title-s"><?php echo e(__('lang.Name:')); ?> </span>
                                                         <span><?php echo e($info->en_peronal_name); ?></span>
                                                     </p>
                                                 <?php endif; ?>
                                                 <?php if(app()->getLocale() == 'ar'): ?>
-                                                    <p><span class="title-s"><?php echo e(__('Profile:')); ?> </span>
+                                                    <p><span class="title-s"><?php echo e(__('lang.Profile:')); ?> </span>
                                                         <span><?php echo e($info->ar_job_title); ?></span>
                                                     </p>
                                                 <?php else: ?>
-                                                    <p><span class="title-s"><?php echo e(__('Profile:')); ?> </span>
+                                                    <p><span class="title-s"><?php echo e(__('lang.Profile:')); ?> </span>
                                                         <span><?php echo e($info->en_job_title); ?></span>
                                                     </p>
                                                 <?php endif; ?>
-                                                <p><span class="title-s"><?php echo e(__('Email:')); ?> </span>
+                                                <p><span class="title-s"><?php echo e(__('lang.Email:')); ?> </span>
                                                     <span><?php echo e($info->email); ?></span>
                                                 </p>
-                                                <p><span class="title-s"><?php echo e(__('Phone:')); ?> </span>
+                                                <p><span class="title-s"><?php echo e(__('lang.Phone:')); ?> </span>
                                                     <span><?php echo e($info->phone); ?></span>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="skill-mf">
-                                        <p class="title-s"><?php echo e(__('Skill')); ?></p>
+                                        <p class="title-s"><?php echo e(__('lang.Skill')); ?></p>
                                         <span>HTML</span> <span class="pull-right">85%</span>
                                         <div class="progress">
                                             <div class="progress-bar" role="progressbar" style="width: 85%;"
@@ -126,7 +126,7 @@
                                     <div class="about-me pt-4 pt-md-0">
                                         <div class="title-box-2">
                                             <h5 class="title-left">
-                                                <?php echo e(__('About me')); ?>
+                                                <?php echo e(__('lang.About me')); ?>
 
                                             </h5>
                                         </div>
@@ -153,11 +153,11 @@
                     <div class="col-sm-12">
                         <div class="title-box text-center">
                             <h3 class="title-a">
-                                <?php echo e(__('Services')); ?>
+                                <?php echo e(__('lang.Services')); ?>
 
                             </h3>
                             <p class="subtitle-a">
-                                <?php echo e(__('Services Description **NEED TO BE EDITED')); ?>
+                                <?php echo e(__('lang.Services Description **NEED TO BE EDITED')); ?>
 
                             </p>
                             <div class="line-mf"></div>
@@ -198,7 +198,7 @@
                             </div>
                         <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-                        <h4 class="text-center"><?php echo e(__('Empty')); ?></h4>
+                        <h4 class="text-center"><?php echo e(__('lang.Empty')); ?></h4>
                     <?php endif; ?>
                 </div>
             </div>
@@ -219,7 +219,7 @@
                                 <p data-purecounter-start="0"
                                     data-purecounter-end="<?php echo e($statistics->work_complated); ?>"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text"><?php echo e(__('WORKS COMPLETED')); ?></span>
+                                <span class="counter-text"><?php echo e(__('lang.WORKS COMPLETED')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -232,7 +232,7 @@
                                 <p data-purecounter-start="0"
                                     data-purecounter-end="<?php echo e($statistics->years_of_experience); ?>"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text"><?php echo e(__('YEARS OF EXPERIENCE')); ?></span>
+                                <span class="counter-text"><?php echo e(__('lang.YEARS OF EXPERIENCE')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                             <div class="counter-num">
                                 <p data-purecounter-start="0" data-purecounter-end="<?php echo e($statistics->total_clients); ?>"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text"><?php echo e(__('TOTAL CLIENTS')); ?></span>
+                                <span class="counter-text"><?php echo e(__('lang.TOTAL CLIENTS')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
                             <div class="counter-num">
                                 <p data-purecounter-start="0" data-purecounter-end="<?php echo e($statistics->award_won); ?>"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text"><?php echo e(__('AWARD WON')); ?></span>
+                                <span class="counter-text"><?php echo e(__('lang.AWARD WON')); ?></span>
                             </div>
                         </div>
                     </div>
@@ -357,7 +357,7 @@
                     <div class="col-sm-12">
                         <div class="title-box text-center">
                             <h3 class="title-a">
-                                <?php echo e(__('Blog')); ?>
+                                <?php echo e(__('lang.Blog')); ?>
 
                             </h3>
                             <p class="subtitle-a">

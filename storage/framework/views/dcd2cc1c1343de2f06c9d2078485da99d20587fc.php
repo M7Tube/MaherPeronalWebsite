@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+
+<?php if(app()->getLocale() == 'ar'): ?>
+    <html lang="ar" dir="rtl">
+<?php else: ?>
+    <html lang="en" dir="ltr">
+<?php endif; ?>
 
 <head>
     <meta charset="utf-8">
@@ -62,15 +67,15 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('home-page.home-page')->html();
-} elseif ($_instance->childHasBeenRendered('oESUobt')) {
-    $componentId = $_instance->getRenderedChildComponentId('oESUobt');
-    $componentTag = $_instance->getRenderedChildComponentTagName('oESUobt');
+} elseif ($_instance->childHasBeenRendered('FmHwGCU')) {
+    $componentId = $_instance->getRenderedChildComponentId('FmHwGCU');
+    $componentTag = $_instance->getRenderedChildComponentTagName('FmHwGCU');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('oESUobt');
+    $_instance->preserveRenderedChild('FmHwGCU');
 } else {
     $response = \Livewire\Livewire::mount('home-page.home-page');
     $html = $response->html();
-    $_instance->logRenderedChild('oESUobt', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('FmHwGCU', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+
+@if (app()->getLocale() == 'ar')
+    <html lang="ar" dir="rtl">
+@else
+    <html lang="en" dir="ltr">
+@endif
 
 <head>
     <meta charset="utf-8">

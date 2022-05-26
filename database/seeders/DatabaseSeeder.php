@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             AppSettingsSeeder::class,
             ServicesSeeder::class,
             StatisticsSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

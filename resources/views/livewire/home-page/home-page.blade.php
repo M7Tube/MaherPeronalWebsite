@@ -12,11 +12,11 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">{{ __('Home') }}</a></li>
-                    <li><a class="nav-link scrollto" href="#about">{{ __('About') }}</a></li>
-                    <li><a class="nav-link scrollto" href="#services">{{ __('Services') }}</a></li>
-                    <li><a class="nav-link scrollto " href="#work">{{ __('Work') }}</a></li>
-                    <li><a class="nav-link scrollto " href="#blog">{{ __('Blog') }}</a></li>
+                    <li><a class="nav-link scrollto active" href="#hero">{{ __('lang.Home') }}</a></li>
+                    <li><a class="nav-link scrollto" href="#about">{{ __('lang.About') }}</a></li>
+                    <li><a class="nav-link scrollto" href="#services">{{ __('lang.Services') }}</a></li>
+                    <li><a class="nav-link scrollto " href="#work">{{ __('lang.Work') }}</a></li>
+                    <li><a class="nav-link scrollto " href="#blog">{{ __('lang.Blog') }}</a></li>
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="#">Drop Down 1</a></li>
@@ -35,7 +35,7 @@
                                 <li><a href="#">Drop Down 4</a></li>
                             </ul>
                         </li> --}}
-                    <li><a class="nav-link scrollto" href="#contact">{{ __('Contact') }}</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">{{ __('lang.Contact') }}</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -89,34 +89,34 @@
                                         <div class="col-sm-6 col-md-7">
                                             <div class="about-info">
                                                 @if (app()->getLocale() == 'ar')
-                                                    <p><span class="title-s">{{ __('Name:') }} </span>
+                                                    <p><span class="title-s">{{ __('lang.Name:') }} </span>
                                                         <span>{{ $info->ar_peronal_name }}</span>
                                                     </p>
                                                 @else
-                                                    <p><span class="title-s">{{ __('Name:') }} </span>
+                                                    <p><span class="title-s">{{ __('lang.Name:') }} </span>
                                                         <span>{{ $info->en_peronal_name }}</span>
                                                     </p>
                                                 @endif
                                                 @if (app()->getLocale() == 'ar')
-                                                    <p><span class="title-s">{{ __('Profile:') }} </span>
+                                                    <p><span class="title-s">{{ __('lang.Profile:') }} </span>
                                                         <span>{{ $info->ar_job_title }}</span>
                                                     </p>
                                                 @else
-                                                    <p><span class="title-s">{{ __('Profile:') }} </span>
+                                                    <p><span class="title-s">{{ __('lang.Profile:') }} </span>
                                                         <span>{{ $info->en_job_title }}</span>
                                                     </p>
                                                 @endif
-                                                <p><span class="title-s">{{ __('Email:') }} </span>
+                                                <p><span class="title-s">{{ __('lang.Email:') }} </span>
                                                     <span>{{ $info->email }}</span>
                                                 </p>
-                                                <p><span class="title-s">{{ __('Phone:') }} </span>
+                                                <p><span class="title-s">{{ __('lang.Phone:') }} </span>
                                                     <span>{{ $info->phone }}</span>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="skill-mf">
-                                        <p class="title-s">{{ __('Skill') }}</p>
+                                        <p class="title-s">{{ __('lang.Skill') }}</p>
                                         <span>HTML</span> <span class="pull-right">85%</span>
                                         <div class="progress">
                                             <div class="progress-bar" role="progressbar" style="width: 85%;"
@@ -143,7 +143,7 @@
                                     <div class="about-me pt-4 pt-md-0">
                                         <div class="title-box-2">
                                             <h5 class="title-left">
-                                                {{ __('About me') }}
+                                                {{ __('lang.About me') }}
                                             </h5>
                                         </div>
                                         @if (app()->getLocale() == 'ar')
@@ -169,10 +169,10 @@
                     <div class="col-sm-12">
                         <div class="title-box text-center">
                             <h3 class="title-a">
-                                {{ __('Services') }}
+                                {{ __('lang.Services') }}
                             </h3>
                             <p class="subtitle-a">
-                                {{ __('Services Description **NEED TO BE EDITED') }}
+                                {{ __('lang.Services Description **NEED TO BE EDITED') }}
                             </p>
                             <div class="line-mf"></div>
                         </div>
@@ -210,7 +210,7 @@
                             </div>
                         @endif
                     @empty
-                        <h4 class="text-center">{{ __('Empty') }}</h4>
+                        <h4 class="text-center">{{ __('lang.Empty') }}</h4>
                     @endforelse
                 </div>
             </div>
@@ -231,7 +231,7 @@
                                 <p data-purecounter-start="0"
                                     data-purecounter-end="{{ $statistics->work_complated }}"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text">{{ __('WORKS COMPLETED') }}</span>
+                                <span class="counter-text">{{ __('lang.WORKS COMPLETED') }}</span>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                                 <p data-purecounter-start="0"
                                     data-purecounter-end="{{ $statistics->years_of_experience }}"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text">{{ __('YEARS OF EXPERIENCE') }}</span>
+                                <span class="counter-text">{{ __('lang.YEARS OF EXPERIENCE') }}</span>
                             </div>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
                             <div class="counter-num">
                                 <p data-purecounter-start="0" data-purecounter-end="{{ $statistics->total_clients }}"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text">{{ __('TOTAL CLIENTS') }}</span>
+                                <span class="counter-text">{{ __('lang.TOTAL CLIENTS') }}</span>
                             </div>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
                             <div class="counter-num">
                                 <p data-purecounter-start="0" data-purecounter-end="{{ $statistics->award_won }}"
                                     data-purecounter-duration="1" class="counter purecounter"></p>
-                                <span class="counter-text">{{ __('AWARD WON') }}</span>
+                                <span class="counter-text">{{ __('lang.AWARD WON') }}</span>
                             </div>
                         </div>
                     </div>
@@ -533,7 +533,7 @@
                     <div class="col-sm-12">
                         <div class="title-box text-center">
                             <h3 class="title-a">
-                                {{ __('Blog') }}
+                                {{ __('lang.Blog') }}
                             </h3>
                             <p class="subtitle-a">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
