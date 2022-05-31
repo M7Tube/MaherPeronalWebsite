@@ -267,29 +267,7 @@
         <!-- ======= Portfolio Section ======= -->
         <section id="work" class="portfolio-mf sect-pt4 route">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="title-box text-center">
-                            <h3 class="title-a">
-                                Make apppointment
-                            </h3>
-                            <div class="col-md-8">
-
-                                <div mbsc-page class="demo-appointment-booking">
-                                    <div style="height:100%">
-                                        <div class="md-calendar-booking">
-                                            <div class="mbsc-form-group">
-                                                <div class="mbsc-form-group-title">Select date & time</div>
-                                                <div id="demo-booking-datetime" class="booking-datetime"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="line-mf"></div>
-                        </div>
-                    </div>
-                </div>
+                
                 
             </div>
         </section><!-- End Portfolio Section -->

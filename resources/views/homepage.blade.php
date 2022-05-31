@@ -24,7 +24,7 @@
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- Mobiscroll JS and CSS Includes -->
-    <link rel="stylesheet" href="{{ asset('css/mobiscroll.javascript.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/mobiscroll.javascript.min.css') }}">
     <script src="{{ asset('js/mobiscroll.javascript.min.js') }}"></script>
 
     <style type="text/css">
@@ -56,7 +56,7 @@
             top: 30px;
         }
 
-    </style>
+    </style> --}}
 
     @livewireStyles
 </head>
@@ -90,7 +90,7 @@
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-    <script>
+    {{-- <script>
         mobiscroll.setOptions({
             locale: mobiscroll
                 .localeAr, // Specify language like: locale: mobiscroll.localePl or omit setting to use default
@@ -156,7 +156,7 @@
                     });
                 }, 'jsonp');
         }
-    </script>
+    </script> --}}
 
     <!-- Vendor2 JS Files -->
     <script src="{{ asset('vendor2/purecounter/purecounter.js') }}"></script>

@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homepage');
 })->name('homepage');
+Route::group(['prefix' => '{language}'], function () {
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
+    //settings page in dashboard
+    Route::get('/settings', function () {
+        return view('Dashboard.Settings.Settings');
+    })->middleware(['auth'])->name('settings');
+});
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
