@@ -22,9 +22,7 @@ Route::group(['prefix' => '{language}'], function () {
         return view('dashboard');
     })->middleware(['auth'])->name('dashboard');
     //settings page in dashboard
-    Route::get('/settings', function () {
-        return view('Dashboard.Settings.Settings');
-    })->middleware(['auth'])->name('settings');
+    Route::view('/settings', 'Dashboard.Settings.Settings')->middleware(['auth'])->name('settings');
 });
 
 require __DIR__ . '/auth.php';

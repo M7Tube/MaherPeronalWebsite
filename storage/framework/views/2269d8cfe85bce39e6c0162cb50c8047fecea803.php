@@ -11,8 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
-
     <link href="<?php echo e(asset('/img/favicon.png')); ?>" rel="icon">
     <link href="<?php echo e(asset('img/apple-touch-icon.png')); ?>" rel="apple-touch-icon">
 
@@ -26,7 +24,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
+    
     <style>
         :root {
             touch-action: pan-x pan-y;
@@ -63,29 +61,17 @@
     </style>
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
+    <?php echo $__env->yieldContent('head'); ?>
+
     <?php echo \Livewire\Livewire::styles(); ?>
 
 
 </head>
 
 <body>
-    <div>
-        <?php echo $__env->make('layouts.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->yieldContent('body'); ?>
 
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <?php echo e($header); ?>
 
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <main>
-            <?php echo e($slot); ?>
-
-        </main>
-    </div>
     <!-- Vendor2 JS Files -->
     <script src="<?php echo e(asset('vendor2/purecounter/purecounter.js')); ?>"></script>
     <script src="<?php echo e(asset('vendor2/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
@@ -101,4 +87,4 @@
 </body>
 
 </html>
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/layouts/app.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/layouts/dashboard.blade.php ENDPATH**/ ?>
