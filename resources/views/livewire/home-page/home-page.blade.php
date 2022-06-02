@@ -45,7 +45,7 @@
 
     <!-- ======= Hero Section ======= -->
     <div id="hero" class="hero route bg-image"
-        style="background-image: url({{ asset('storage/hero-bg.jpg') }}">
+        style="background-image: url({{ asset('img/' . $info->big_personal_pic) }})">
         <div class="overlay-itro"></div>
         <div class="hero-content display-table">
             <div class="table-cell">
