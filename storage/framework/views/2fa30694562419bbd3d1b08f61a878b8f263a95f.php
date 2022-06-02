@@ -1,1 +1,0 @@
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/welcome.blade.php ENDPATH**/ ?>
