@@ -9,13 +9,13 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo e(asset('img/maherLogo.png')); ?>">
+    <link rel="icon" type="image/png" href="<?php echo e(asset('img/maherLogo.png')); ?>">
     <title><?php echo e(__('Maher Shehadie')); ?></title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link href="<?php echo e(asset('/img/favicon.png')); ?>" rel="icon">
-    <link href="<?php echo e(asset('img/apple-touch-icon.png')); ?>" rel="apple-touch-icon">
+    
 
     <link href="<?php echo e(asset('vendor2/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('vendor2/bootstrap-icons/bootstrap-icons.css')); ?>" rel="stylesheet">
@@ -35,15 +35,15 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('home-page.home-page')->html();
-} elseif ($_instance->childHasBeenRendered('1oprqWS')) {
-    $componentId = $_instance->getRenderedChildComponentId('1oprqWS');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1oprqWS');
+} elseif ($_instance->childHasBeenRendered('fn7GdVa')) {
+    $componentId = $_instance->getRenderedChildComponentId('fn7GdVa');
+    $componentTag = $_instance->getRenderedChildComponentTagName('fn7GdVa');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1oprqWS');
+    $_instance->preserveRenderedChild('fn7GdVa');
 } else {
     $response = \Livewire\Livewire::mount('home-page.home-page');
     $html = $response->html();
-    $_instance->logRenderedChild('1oprqWS', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('fn7GdVa', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

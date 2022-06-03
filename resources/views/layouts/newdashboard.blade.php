@@ -18,10 +18,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/maherLogo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/maherLogo.png') }}">
     <title>
-        Material Dashboard 2 by Creative Tim
+        {{ __('lang.Dashboard') }}
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -140,7 +140,7 @@
                         <li class="nav-item px-3 d-flex align-items-center">
                             <form action="{{ route('logout') }}" method="POST">@csrf
                                 <button type="submit" class="btn nav-link text-body p-0">
-                                    {{ 'lang.Log Out' }}
+                                    {{ __('lang.Log Out') }}
                                 </button>
                             </form>
                         </li>
