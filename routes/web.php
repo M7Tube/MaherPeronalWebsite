@@ -37,6 +37,8 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/Settings', 'pages.Dashboard.Settings.Settings')->name('Settings');
     //Statistics page in dashboard
     Route::view('/Statistics', 'pages.Dashboard.Statistics.Statistics')->name('Statistics');
+    //Services page in dashboard
+    Route::view('/Services', 'pages.Dashboard.Services.Services')->name('Services');
 });
 
 require __DIR__ . '/auth.php';
