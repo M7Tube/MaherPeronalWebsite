@@ -159,7 +159,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                             <button type="submit"
-                                class="mx-auto w-100 btn btn-block btn-outline-primary">{{ __('lang.Edit') }}
+                                class="mx-auto w-100 btn btn-block btn-outline-success">{{ __('lang.Edit') }}
                                 <i class="bi bi-file-earmark-plus"></i></button>
                         </div>
                     </form>

@@ -734,7 +734,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                             <button type="submit"
-                                class="mx-auto w-100 btn btn-block btn-outline-primary"><?php echo e(__('lang.Edit')); ?>
+                                class="mx-auto w-100 btn btn-block btn-outline-success"><?php echo e(__('lang.Edit')); ?>
 
                                 <i class="bi bi-file-earmark-plus"></i></button>
                         </div>

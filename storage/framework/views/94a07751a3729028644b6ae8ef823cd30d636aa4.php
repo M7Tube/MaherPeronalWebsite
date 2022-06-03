@@ -1,23 +1,8 @@
-<?php if (isset($component)) { $__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da = $component; } ?>
-<?php $component = $__env->getContainer()->make(App\View\Components\AppLayout::class, [] + (isset($attributes) ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('app-layout'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $constructor = (new ReflectionClass(App\View\Components\AppLayout::class))->getConstructor()): ?>
-<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-     <?php $__env->slot('header', null, []); ?> 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <?php echo e(__('lang.Welcome Back')); ?> <b>[<?php echo e(auth()->user()['name']); ?>]</b>
-        </h2>
-     <?php $__env->endSlot(); ?>
-    fdas
- <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da)): ?>
-<?php $component = $__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da; ?>
-<?php unset($__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da); ?>
-<?php endif; ?>
+<?php $__env->startSection('head'); ?>
+    <title><?php echo e(__('lang.Dashboard')); ?></title>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('body'); ?>
+    
+<?php $__env->stopSection(); ?>
 
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Dashboard/dashboard.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.newdashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Dashboard/dashboard.blade.php ENDPATH**/ ?>

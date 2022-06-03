@@ -19,6 +19,7 @@ Route::get('/', function () {
 //Single Post page in dashboard
 Route::view('/post', 'pages.Post.post')->name('post');
 
+Route::view('/test', 'layouts.newdashboard')->name('test');
 
 
 Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {

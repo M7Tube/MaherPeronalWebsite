@@ -5,18 +5,18 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('dashboard.statistics.statistics')->html();
-} elseif ($_instance->childHasBeenRendered('NcQtEpK')) {
-    $componentId = $_instance->getRenderedChildComponentId('NcQtEpK');
-    $componentTag = $_instance->getRenderedChildComponentTagName('NcQtEpK');
+} elseif ($_instance->childHasBeenRendered('FbZ5Rix')) {
+    $componentId = $_instance->getRenderedChildComponentId('FbZ5Rix');
+    $componentTag = $_instance->getRenderedChildComponentTagName('FbZ5Rix');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('NcQtEpK');
+    $_instance->preserveRenderedChild('FbZ5Rix');
 } else {
     $response = \Livewire\Livewire::mount('dashboard.statistics.statistics');
     $html = $response->html();
-    $_instance->logRenderedChild('NcQtEpK', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('FbZ5Rix', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Dashboard/Statistics/Statistics.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.newdashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Dashboard/Statistics/Statistics.blade.php ENDPATH**/ ?>

@@ -78,6 +78,7 @@ class Settings extends Component
         $data->location = $this->location;
         $data->save();
         $this->message = "Done !";
+        return redirect()->route('Settings',app()->getLocale());
     }
 
     public function render()
