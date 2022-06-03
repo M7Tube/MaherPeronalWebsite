@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ServicesSeeder::class,
             StatisticsSeeder::class,
             UserSeeder::class,
+            PostSeeder::class,
         ]);
     }
 }
