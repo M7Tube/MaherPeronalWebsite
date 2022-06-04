@@ -4,7 +4,7 @@
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                        <h6 class="text-white text-capitalize ps-3"><?php echo e(__('lang.Services')); ?></h6>
+                        <h6 class="text-white text-capitalize ps-3"><?php echo e(__('Services')); ?></h6>
                     </div>
                 </div>
                 <div class="card-body px-0 pb-2">
@@ -13,16 +13,22 @@
                             <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('lang.English Title')); ?></th>
+                                        <?php echo e(__('English Title')); ?></th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('lang.Arabic Title')); ?></th>
+                                        <?php echo e(__('Arabic Title')); ?></th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('lang.English Descriptions')); ?></th>
+                                        <?php echo e(__('English Descriptions')); ?></th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('lang.Arabic Descriptions')); ?></th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            <?php echo e(__('lang.Icon')); ?></th>
-                                    <th class="text-secondary opacity-7"></th>
+                                        <?php echo e(__('Arabic Descriptions')); ?></th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <?php echo e(__('Icon')); ?></th>
+                                    <th class=""> <a
+                                            href="<?php echo e(route('CreateService', app()->getLocale())); ?>"
+                                            class="text-white btn-success btn font-weight-bold text-xs"
+                                            data-toggle="tooltip" data-original-title="Edit user">
+                                            <?php echo e(__('Create')); ?>
+
+                                        </a></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,23 +48,23 @@
                                         </td>
                                         <td>
 
-                                            <p class="text-xs font-weight-bold mb-0">(<i class="<?php echo e($data->icon); ?>"></i>) <?php echo e($data->icon); ?></p>
+                                            <p class="text-xs font-weight-bold mb-0">(<i
+                                                    class="<?php echo e($data->icon); ?>"></i>) <?php echo e($data->icon); ?></p>
                                         </td>
                                         <td class="align-middle">
                                             <a href="<?php echo e(route('EditService', [app()->getLocale(), 'id' => $data->service_id])); ?>"
-                                                class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
-                                                data-original-title="Edit user">
-                                                <?php echo e(__('lang.Edit')); ?>
+                                                class="btn-outline-success font-weight-bold text-xs"
+                                                data-toggle="tooltip" data-original-title="Edit user">
+                                                <?php echo e(__('Edit')); ?>
 
                                             </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                                     <tr>
-                                        <td><?php echo e(__('lang.Empty')); ?></td>
+                                        <td><?php echo e(__('Empty')); ?></td>
                                     </tr>
                                 <?php endif; ?>
-
                             </tbody>
                         </table>
                     </div>

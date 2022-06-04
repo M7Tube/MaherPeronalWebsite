@@ -3,21 +3,23 @@
         <div class="col-lg-12">
             <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-body">
-                    <form wire:submit.prevent="edit({{ request()->query('id') }})">
-                        @csrf
+                    <form wire:submit.prevent="create">
+                        <?php echo csrf_field(); ?>
                         <div class="results">
-                            @if (Session::get('fail'))
+                            <?php if(Session::get('fail')): ?>
                                 <div class="alert alert-danger">
-                                    {{ Session::get('fail') }}
+                                    <?php echo e(Session::get('fail')); ?>
+
                                 </div>
-                            @endif
+                            <?php endif; ?>
                         </div>
                         <div class="results">
-                            @if ($message)
+                            <?php if($message): ?>
                                 <div class="alert alert-success">
-                                    {{ $message }}
+                                    <?php echo e($message); ?>
+
                                 </div>
-                            @endif
+                            <?php endif; ?>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -35,11 +37,20 @@
                                                                             type="text" autocomplete="off"
                                                                             wire:model="en_name" />
                                                                         <span class="text-danger">
-                                                                            @error('en_name')
-                                                                                {{ $message }}
-                                                                            @enderror
+                                                                            <?php $__errorArgs = ['en_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                                                <?php echo e($message); ?>
+
+                                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label>{{ __('English Name') }}
+                                                                        <label><?php echo e(__('English Name')); ?>
+
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -67,11 +78,20 @@
                                                                             type="text" autocomplete="off"
                                                                             wire:model="ar_name" />
                                                                         <span class="text-danger">
-                                                                            @error('ar_name')
-                                                                                {{ $message }}
-                                                                            @enderror
+                                                                            <?php $__errorArgs = ['ar_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                                                <?php echo e($message); ?>
+
+                                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label>{{ __('Arabic Name') }}
+                                                                        <label><?php echo e(__('Arabic Name')); ?>
+
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -99,11 +119,20 @@
                                                                             type="text" autocomplete="off"
                                                                             wire:model="en_desc" />
                                                                         <span class="text-danger">
-                                                                            @error('en_desc')
-                                                                                {{ $message }}
-                                                                            @enderror
+                                                                            <?php $__errorArgs = ['en_desc'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                                                <?php echo e($message); ?>
+
+                                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label>{{ __('English Description') }}
+                                                                        <label><?php echo e(__('English Description')); ?>
+
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -131,11 +160,20 @@
                                                                             type="text" autocomplete="off"
                                                                             wire:model="ar_desc" />
                                                                         <span class="text-danger">
-                                                                            @error('ar_desc')
-                                                                                {{ $message }}
-                                                                            @enderror
+                                                                            <?php $__errorArgs = ['ar_desc'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                                                <?php echo e($message); ?>
+
+                                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label>{{ __('Arabic Description') }}
+                                                                        <label><?php echo e(__('Arabic Description')); ?>
+
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -163,11 +201,20 @@
                                                                             type="text" autocomplete="off"
                                                                             wire:model="icon" />
                                                                         <span class="text-danger">
-                                                                            @error('icon')
-                                                                                {{ $message }}
-                                                                            @enderror
+                                                                            <?php $__errorArgs = ['icon'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                                                <?php echo e($message); ?>
+
+                                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label>{{ __('Icon') }}
+                                                                        <label><?php echo e(__('Icon')); ?>
+
                                                                         </label>
                                                                         <u><a href="https://icons.getbootstrap.com"
                                                                                 target="blank">Get It From Here</a></u>
@@ -183,15 +230,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-1">
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                             <button type="submit"
-                                class="mx-auto w-100 btn btn-block btn-outline-success">{{ __('Edit') }}
-                                <i class="bi bi-pencil-fill"></i></button>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-1">
-                            <button wire:click.prevent="delete()"
-                                class="mx-auto w-100 btn btn-block btn-outline-danger">{{ __('Delete') }}
-                                <i class="bi bi-trash"></i></button>
+                                class="mx-auto w-100 btn btn-block btn-outline-success"><?php echo e(__('Create')); ?>
+
+                                <i class="bi bi-file-earmark-plus"></i></button>
                         </div>
                     </form>
                 </div>
@@ -199,3 +242,4 @@
         </div>
     </div>
 </div>
+<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/livewire/dashboard/services/create-service.blade.php ENDPATH**/ ?>

@@ -48,6 +48,12 @@ class EditService extends Component
         }
     }
 
+    public function delete()
+    {
+        Services::where('service_id', $this->service_id)->delete();
+        return redirect()->route('Services', app()->getLocale());
+    }
+
     public function render()
     {
         return view('livewire.dashboard.services.edit-service');

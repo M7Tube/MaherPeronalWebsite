@@ -82,6 +82,25 @@
                         <span class="nav-link-text ms-1"><?php echo e(__('lang.Services')); ?></span>
                     </a>
                 </li>
+                <?php if(app()->getLocale() == 'ar'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="<?php echo e(route('dashboard', 'en')); ?>">
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="material-icons opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> English</span>
+                        </a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="<?php echo e(route('dashboard', 'ar')); ?>">
+                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                <i class="material-icons opacity-10"></i>
+                            </div>
+                            <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> عربي</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
                 
             </ul>
         </div>

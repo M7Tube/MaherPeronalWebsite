@@ -49,7 +49,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.English Name')); ?>
+                                                                        <label><?php echo e(__('English Name')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -90,7 +90,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Arabic Name')); ?>
+                                                                        <label><?php echo e(__('Arabic Name')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -131,7 +131,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.English Description')); ?>
+                                                                        <label><?php echo e(__('English Description')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -172,7 +172,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Arabic Description')); ?>
+                                                                        <label><?php echo e(__('Arabic Description')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -213,11 +213,11 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Icon')); ?>
+                                                                        <label><?php echo e(__('Icon')); ?>
 
                                                                         </label>
                                                                         <u><a href="https://icons.getbootstrap.com"
-                                                                            target="blank">Get It From Here</a></u>
+                                                                                target="blank">Get It From Here</a></u>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -230,11 +230,17 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-1">
                             <button type="submit"
-                                class="mx-auto w-100 btn btn-block btn-outline-success"><?php echo e(__('lang.Edit')); ?>
+                                class="mx-auto w-100 btn btn-block btn-outline-success"><?php echo e(__('Edit')); ?>
 
-                                <i class="bi bi-file-earmark-plus"></i></button>
+                                <i class="bi bi-pencil-fill"></i></button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-1">
+                            <button wire:click.prevent="delete()"
+                                class="mx-auto w-100 btn btn-block btn-outline-danger"><?php echo e(__('Delete')); ?>
+
+                                <i class="bi bi-trash"></i></button>
                         </div>
                     </form>
                 </div>

@@ -19,9 +19,6 @@ Route::get('/language/{language}', function () {
 //Single Post page in dashboard
 Route::view('/post', 'pages.Post.post')->name('post');
 
-Route::view('/test', 'layouts.newdashboard')->name('test');
-
-
 Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
 
     Route::get('/dashboard', function () {
@@ -41,6 +38,8 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/Services', 'pages.Dashboard.Services.Services')->name('Services');
     //Edit Service page in dashboard
     Route::view('/EditService', 'pages.Dashboard.Services.EditService')->name('EditService');
+    //Create Service page in dashboard
+    Route::view('/CreateService', 'pages.Dashboard.Services.CreateService')->name('CreateService');
 });
 
 require __DIR__ . '/auth.php';

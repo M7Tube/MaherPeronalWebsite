@@ -736,7 +736,7 @@ unset($__errorArgs, $__bag); ?>
                             <button type="submit"
                                 class="mx-auto w-100 btn btn-block btn-outline-success"><?php echo e(__('lang.Edit')); ?>
 
-                                <i class="bi bi-file-earmark-plus"></i></button>
+                                <i class="bi bi-pencil-fill"></i></button>
                         </div>
                     </form>
                 </div>
