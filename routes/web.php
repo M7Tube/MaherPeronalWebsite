@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+Route::redirect('/', '/en');
+Route::get('{language}/', function () {
     return view('pages.HomePage.homepage');
 })->name('homepage');
 //Single Post page in dashboard

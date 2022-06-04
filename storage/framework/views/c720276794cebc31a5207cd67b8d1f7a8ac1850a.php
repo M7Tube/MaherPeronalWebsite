@@ -3,9 +3,11 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
             <?php if(app()->getLocale() == 'ar'): ?>
-                <h1 class="logo"><a href="<?php echo e(route('homepage')); ?>"><?php echo e($info->ar_peronal_name); ?></a></h1>
+                <h1 class="logo"><a
+                        href="<?php echo e(route('homepage', app()->getLocale())); ?>"><?php echo e($info->ar_peronal_name); ?></a></h1>
             <?php else: ?>
-                <h1 class="logo"><a href="<?php echo e(route('homepage')); ?>"><?php echo e($info->en_peronal_name); ?></a></h1>
+                <h1 class="logo"><a
+                        href="<?php echo e(route('homepage', app()->getLocale())); ?>"><?php echo e($info->en_peronal_name); ?></a></h1>
             <?php endif; ?>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo"><img src="<?php echo e(asset('img/logo.png')); ?>" alt="" class="img-fluid"></a>-->
@@ -17,8 +19,14 @@
                     <li><a class="nav-link scrollto" href="#services"><?php echo e(__('lang.Services')); ?></a></li>
                     <li><a class="nav-link scrollto " href="#work"><?php echo e(__('lang.Work')); ?></a></li>
                     <li><a class="nav-link scrollto " href="#blog"><?php echo e(__('lang.Blog')); ?></a></li>
+
                     
                     <li><a class="nav-link scrollto" href="#contact"><?php echo e(__('lang.Contact')); ?></a></li>
+                    <?php if(app()->getLocale() == 'ar'): ?>
+                        <li><a class="nav-link scrollto " href="<?php echo e(route('homepage', 'en')); ?>">English<i class="bi bi-translate"></i></a></li>
+                    <?php else: ?>
+                        <li><a class="nav-link scrollto " href="<?php echo e(route('homepage', 'ar')); ?>">عربي<i class="bi bi-translate"></i></a></li>
+                    <?php endif; ?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

@@ -3,9 +3,11 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
             @if (app()->getLocale() == 'ar')
-                <h1 class="logo"><a href="{{ route('homepage') }}">{{ $info->ar_peronal_name }}</a></h1>
+                <h1 class="logo"><a
+                        href="{{ route('homepage', app()->getLocale()) }}">{{ $info->ar_peronal_name }}</a></h1>
             @else
-                <h1 class="logo"><a href="{{ route('homepage') }}">{{ $info->en_peronal_name }}</a></h1>
+                <h1 class="logo"><a
+                        href="{{ route('homepage', app()->getLocale()) }}">{{ $info->en_peronal_name }}</a></h1>
             @endif
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>-->
@@ -17,6 +19,7 @@
                     <li><a class="nav-link scrollto" href="#services">{{ __('lang.Services') }}</a></li>
                     <li><a class="nav-link scrollto " href="#work">{{ __('lang.Work') }}</a></li>
                     <li><a class="nav-link scrollto " href="#blog">{{ __('lang.Blog') }}</a></li>
+
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="#">Drop Down 1</a></li>
@@ -36,6 +39,11 @@
                             </ul>
                         </li> --}}
                     <li><a class="nav-link scrollto" href="#contact">{{ __('lang.Contact') }}</a></li>
+                    @if (app()->getLocale() == 'ar')
+                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'en') }}">English<i class="bi bi-translate"></i></a></li>
+                    @else
+                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'ar') }}">عربي<i class="bi bi-translate"></i></a></li>
+                    @endif
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
