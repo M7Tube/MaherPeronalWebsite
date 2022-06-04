@@ -23,37 +23,6 @@ class Services extends Component
     public $orderAsc = true;
     public $search = '';
 
-    public function Create()
-    {
-        $this->livewire_create(
-            [
-                'en_name' => ['required', 'string', 'max:72'],
-                'ar_name' => ['required', 'string', 'max:72'],
-                'en_desc' => ['required', 'string', 'max:288'],
-                'ar_desc' => ['required', 'string', 'max:288'],
-            ],
-            'App\Models\Services',
-            [
-                'en_name',
-                'ar_name',
-                'en_desc',
-                'ar_desc',
-                'icon',
-            ],
-            'Services Created Successfully',
-            'Created'
-        );
-    }
-
-    public function edit($id)
-    {
-        $this->livewire_edit('S', 'App\Models\Services', 'service_id', $id, [
-            'service_id', 'en_name', 'ar_name',
-            'en_desc',
-            'ar_desc',
-            'icon'
-        ], 'WrongServices', 'You Can Not Edit This Services');
-    }
     public function clear()
     {
         $this->livewire_clear([
@@ -62,30 +31,6 @@ class Services extends Component
             'ar_desc',
             'icon'
         ]);
-    }
-    public function update()
-    {
-        $this->livewire_update(
-            [
-                'en_name' => ['string', 'max:72'],
-                'ar_name' => ['string', 'max:72'],
-                'en_desc' => ['string', 'max:288'],
-                'ar_desc' => ['string', 'max:288'],
-            ],
-            'S',
-            'App\Models\Services',
-            $this->service_id,
-            [
-                'en_name',
-                'ar_name',
-                'en_desc',
-                'ar_desc',
-                'icon',
-            ],
-            'Services Updated Successfully',
-            'You Can Not Edit This Services',
-            'Updated'
-        );
     }
 
     public function delete()

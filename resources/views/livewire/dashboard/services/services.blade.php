@@ -14,15 +14,14 @@
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         {{ __('lang.English Title') }}</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         {{ __('lang.Arabic Title') }}</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         {{ __('lang.English Descriptions') }}</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         {{ __('lang.Arabic Descriptions') }}</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            {{ __('lang.Icon') }}</th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                             </thead>
@@ -41,9 +40,14 @@
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0">{{ $data->ar_desc }}</p>
                                         </td>
+                                        <td>
+
+                                            <p class="text-xs font-weight-bold mb-0">(<i class="{{ $data->icon }}"></i>) {{ $data->icon }}</p>
+                                        </td>
                                         <td class="align-middle">
-                                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                                data-toggle="tooltip" data-original-title="Edit user">
+                                            <a href="{{ route('EditService', [app()->getLocale(), 'id' => $data->service_id]) }}"
+                                                class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                data-original-title="Edit user">
                                                 {{ __('lang.Edit') }}
                                             </a>
                                         </td>
