@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Dashboard\Posts;
 
 use App\Http\Traits\LivewireDashboardTrait;
+use Carbon\Carbon;
 use Livewire\WithFileUploads;
 use Livewire\Component;
 
@@ -27,10 +28,11 @@ class CreatePost extends Component
     }
     public function updatedPicture()
     {
+        $time = Carbon::now();
         $this->validate([
             'picture' => ['required', 'mimes:jpg,png,jpeg'],
         ]);
-        $this->picture->storeAs('img',$this->picture->getClientOriginalName());
+        $this->picture->storeAs('img', $this->picture->getClientOriginalName());
     }
 
     public function create()

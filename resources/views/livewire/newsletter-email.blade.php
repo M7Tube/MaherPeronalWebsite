@@ -15,7 +15,7 @@
                         <div class="col-md-8">
                             <div class="form-floating mb-1">
                                 <input class="form-control" id="email" type="text" wire:model="email"
-                                    autocomplete="off" />
+                                    autocomplete="off" required/>
                                 <span class="text-danger">
                                     @error('email')
                                         {{ $message }}

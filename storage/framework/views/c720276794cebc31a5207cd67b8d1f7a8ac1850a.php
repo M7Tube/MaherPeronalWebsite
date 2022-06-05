@@ -318,111 +318,43 @@ echo $html;
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-img">
-                                <a href="blog-single.html"><img src="<?php echo e(asset('img/post-1.jpg')); ?>" alt=""
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-category-box">
-                                    <div class="card-category">
-                                        <h6 class="category">Travel</h6>
+                    <?php $__empty_1 = true; $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                        <div class="col-md-4">
+                            <div class="card card-blog">
+                                <div class="card-img">
+                                    <a href="blog-single.html"><img
+                                            src="data:image/png|jpg|jpeg;base64, <?php echo base64_encode(file_get_contents('../storage/app/img/' . $post->picture)); ?>" alt="picture"
+                                            class="img-fluid"></a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-category-box">
+                                        <div class="card-category">
+                                            <h6 class="category"><?php echo e($post->main_title); ?></h6>
+                                        </div>
                                     </div>
+                                    <h3 class="card-title"><a href="blog-single.html"><?php echo e($post->title); ?></a>
+                                    </h3>
+                                    <p class="card-description">
+                                        <?php echo e(substr($post->body, 0, 100)); ?><a href="" class="text-primary">
+                                            <?php echo e(__('...Read More')); ?></a>
+                                    </p>
                                 </div>
-                                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a>
-                                </h3>
-                                <p class="card-description">
-                                    Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent
-                                    sapien massa, convallis
-                                    a pellentesque nec,
-                                    egestas non nisi.
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="post-author">
-                                    <a href="#">
-                                        <img src="<?php echo e(asset('img/testimonial-2.jpg')); ?>" alt=""
-                                            class="avatar rounded-circle">
-                                        <span class="author">Morgan Freeman</span>
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="bi bi-clock"></span> 10 min
+                                <div class="card-footer">
+                                    <div class="post-author">
+                                        <span class="author"><b><?php echo e($post->user->name); ?></b></span>
+                                    </div>
+                                    <div class="post-date">
+                                        <span class="bi bi-clock"></span> <?php echo e($post->created_at); ?>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-img">
-                                <a href="blog-single.html"><img src="<?php echo e(asset('img/post-2.jpg')); ?>" alt=""
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-category-box">
-                                    <div class="card-category">
-                                        <h6 class="category">Web Design</h6>
-                                    </div>
-                                </div>
-                                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a>
-                                </h3>
-                                <p class="card-description">
-                                    Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent
-                                    sapien massa, convallis
-                                    a pellentesque nec,
-                                    egestas non nisi.
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="post-author">
-                                    <a href="#">
-                                        <img src="<?php echo e(asset('img/testimonial-2.jpg')); ?>" alt=""
-                                            class="avatar rounded-circle">
-                                        <span class="author">Morgan Freeman</span>
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="bi bi-clock"></span> 10 min
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-img">
-                                <a href="blog-single.html"><img src="<?php echo e(asset('img/post-3.jpg')); ?>" alt=""
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-category-box">
-                                    <div class="card-category">
-                                        <h6 class="category">Web Design</h6>
-                                    </div>
-                                </div>
-                                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a>
-                                </h3>
-                                <p class="card-description">
-                                    Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent
-                                    sapien massa, convallis
-                                    a pellentesque nec,
-                                    egestas non nisi.
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="post-author">
-                                    <a href="#">
-                                        <img src="<?php echo e(asset('img/testimonial-2.jpg')); ?>" alt=""
-                                            class="avatar rounded-circle">
-                                        <span class="author">Morgan Freeman</span>
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="bi bi-clock"></span> 10 min
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                        <h4 class="text-center"><?php echo e(__('Empty')); ?></h4>
+                    <?php endif; ?>
+
+
                 </div>
             </div>
         </section><!-- End Blog Section -->

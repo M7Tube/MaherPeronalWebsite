@@ -501,111 +501,42 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-img">
-                                <a href="blog-single.html"><img src="{{ asset('img/post-1.jpg') }}" alt=""
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-category-box">
-                                    <div class="card-category">
-                                        <h6 class="category">Travel</h6>
+                    @forelse ($posts as $post)
+                        <div class="col-md-4">
+                            <div class="card card-blog">
+                                <div class="card-img">
+                                    <a href="blog-single.html"><img
+                                            src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $post->picture)) !!}" alt="picture"
+                                            class="img-fluid"></a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-category-box">
+                                        <div class="card-category">
+                                            <h6 class="category">{{ $post->main_title }}</h6>
+                                        </div>
                                     </div>
+                                    <h3 class="card-title"><a href="blog-single.html">{{ $post->title }}</a>
+                                    </h3>
+                                    <p class="card-description">
+                                        {{ substr($post->body, 0, 100) }}<a href="" class="text-primary">
+                                            {{ __('...Read More') }}</a>
+                                    </p>
                                 </div>
-                                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a>
-                                </h3>
-                                <p class="card-description">
-                                    Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent
-                                    sapien massa, convallis
-                                    a pellentesque nec,
-                                    egestas non nisi.
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="post-author">
-                                    <a href="#">
-                                        <img src="{{ asset('img/testimonial-2.jpg') }}" alt=""
-                                            class="avatar rounded-circle">
-                                        <span class="author">Morgan Freeman</span>
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="bi bi-clock"></span> 10 min
+                                <div class="card-footer">
+                                    <div class="post-author">
+                                        <span class="author"><b>{{ $post->user->name }}</b></span>
+                                    </div>
+                                    <div class="post-date">
+                                        <span class="bi bi-clock"></span> {{ $post->created_at }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-img">
-                                <a href="blog-single.html"><img src="{{ asset('img/post-2.jpg') }}" alt=""
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-category-box">
-                                    <div class="card-category">
-                                        <h6 class="category">Web Design</h6>
-                                    </div>
-                                </div>
-                                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a>
-                                </h3>
-                                <p class="card-description">
-                                    Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent
-                                    sapien massa, convallis
-                                    a pellentesque nec,
-                                    egestas non nisi.
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="post-author">
-                                    <a href="#">
-                                        <img src="{{ asset('img/testimonial-2.jpg') }}" alt=""
-                                            class="avatar rounded-circle">
-                                        <span class="author">Morgan Freeman</span>
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="bi bi-clock"></span> 10 min
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-img">
-                                <a href="blog-single.html"><img src="{{ asset('img/post-3.jpg') }}" alt=""
-                                        class="img-fluid"></a>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-category-box">
-                                    <div class="card-category">
-                                        <h6 class="category">Web Design</h6>
-                                    </div>
-                                </div>
-                                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a>
-                                </h3>
-                                <p class="card-description">
-                                    Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent
-                                    sapien massa, convallis
-                                    a pellentesque nec,
-                                    egestas non nisi.
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="post-author">
-                                    <a href="#">
-                                        <img src="{{ asset('img/testimonial-2.jpg') }}" alt=""
-                                            class="avatar rounded-circle">
-                                        <span class="author">Morgan Freeman</span>
-                                    </a>
-                                </div>
-                                <div class="post-date">
-                                    <span class="bi bi-clock"></span> 10 min
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <h4 class="text-center">{{ __('Empty') }}</h4>
+                    @endforelse
+
+
                 </div>
             </div>
         </section><!-- End Blog Section -->
