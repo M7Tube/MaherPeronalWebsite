@@ -34,7 +34,7 @@ class CreatePost extends Component
         ]);
         $this->picture->storeAs('img/', $this->picture->getClientOriginalName());
     }
-
+//l
     public function create()
     {
         $this->validate([
