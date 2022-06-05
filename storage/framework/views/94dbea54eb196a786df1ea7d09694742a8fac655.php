@@ -47,7 +47,7 @@
                                                 <?php echo e(substr($data->body, 0, 25) . '...'); ?></p>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?php echo e($data->picture); ?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><img src="data:image/png|jpg|jpeg;base64, <?php echo base64_encode(file_get_contents('../storage/app/img/' . $data->picture)); ?>" alt="picture" width="150px"></p>
                                         </td>
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0"><?php echo e($data->keywords); ?></p>

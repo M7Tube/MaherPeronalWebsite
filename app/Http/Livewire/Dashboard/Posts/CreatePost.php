@@ -29,7 +29,6 @@ class CreatePost extends Component
     }
     public function updatedPicture()
     {
-        $time = Carbon::now();
         $this->validate([
             'picture' => ['required', 'mimes:jpg,png,jpeg'],
         ]);
