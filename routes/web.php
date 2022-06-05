@@ -51,6 +51,8 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/EditPost', 'pages.Dashboard.Posts.EditPost')->name('EditPost');
     //NewsletterEmails page in dashboard
     Route::view('/NewsletterEmails', 'pages.Dashboard.NewsletterEmails.NewsletterEmails')->name('NewsletterEmails');
+    //Edit NewsletterEmails page in dashboard
+    Route::view('/EditNewsletterEmails', 'pages.Dashboard.NewsletterEmails.EditNewsletterEmails')->name('EditNewsletterEmails');
 });
 
 require __DIR__ . '/auth.php';

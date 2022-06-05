@@ -3,22 +3,8 @@
         <div class="col-lg-12">
             <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-body">
-                    <form wire:submit.prevent="create">
+                    <form wire:submit.prevent="edit">
                         @csrf
-                        <div class="results">
-                            @if (Session::get('fail'))
-                                <div class="alert alert-danger">
-                                    {{ Session::get('fail') }}
-                                </div>
-                            @endif
-                        </div>
-                        <div class="results">
-                            @if ($message)
-                                <div class="alert alert-success">
-                                    {{ $message }}
-                                </div>
-                            @endif
-                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -84,7 +70,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-6">
                                 <div class="mb-3">
                                     <div class="my-2 col-12">
                                         <div class="Scard card shadow-lg border-2 rounded-lg">
@@ -95,8 +81,9 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <textarea class="form-control" wire:model="body" ></textarea>
-                                                                        {{-- id="myeditorinstance" --}}
+                                                                        <input class="form-control" id="body"
+                                                                            type="text" autocomplete="off"
+                                                                            wire:model="body" />
                                                                         <span class="text-danger">
                                                                             @error('body')
                                                                                 {{ $message }}
@@ -179,6 +166,34 @@
                                     </div>
                                 </div>
                             </div>
+                            @if ($oldpicture)
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <div class="my-2 col-12">
+                                            <div class="Scard card shadow-lg border-2 rounded-lg">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="media">
+                                                            <div class="media-body text-right">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-floating mb-1">
+                                                                            Old Picture Preview:
+
+                                                                            <img src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $oldpicture)) !!}"
+                                                                                width="150px">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                             @if ($picture)
                                 <div class="col-12">
                                     <div class="mb-3">
@@ -207,12 +222,16 @@
                                     </div>
                                 </div>
                             @endif
-                            <input type="hidden" wire:model="user_id">
                         </div>
-                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-1">
                             <button type="submit"
-                                class="mx-auto w-100 btn btn-block btn-outline-success">{{ __('Create') }}
-                                <i class="bi bi-file-earmark-plus"></i></button>
+                                class="mx-auto w-100 btn btn-block btn-outline-success">{{ __('Edit') }}
+                                <i class="bi bi-pencil-fill"></i></button>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between mt-4 mb-1">
+                            <button wire:click.prevent="delete()"
+                                class="mx-auto w-100 btn btn-block btn-outline-danger">{{ __('Delete') }}
+                                <i class="bi bi-trash"></i></button>
                         </div>
                     </form>
                 </div>

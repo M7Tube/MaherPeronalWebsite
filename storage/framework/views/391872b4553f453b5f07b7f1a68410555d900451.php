@@ -115,7 +115,8 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <textarea class="form-control" wire:model="body" id="myeditorinstance"></textarea>
+                                                                        <textarea class="form-control" wire:model="body" ></textarea>
+                                                                        
                                                                         <span class="text-danger">
                                                                             <?php $__errorArgs = ['body'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

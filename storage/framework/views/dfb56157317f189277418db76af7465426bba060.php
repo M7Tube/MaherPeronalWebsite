@@ -29,7 +29,7 @@
                                             <p class="text-xs font-weight-bold mb-0"><?php echo e($data->email); ?></p>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="<?php echo e(route('EditService', [app()->getLocale(), 'id' => $data->service_id])); ?>"
+                                            <a href="<?php echo e(route('EditNewsletterEmails', [app()->getLocale(), 'id' => $data->newsletter_email_id])); ?>"
                                                 class="btn-outline-success font-weight-bold text-xs"
                                                 data-toggle="tooltip" data-original-title="Edit user">
                                                 <?php echo e(__('Edit')); ?>

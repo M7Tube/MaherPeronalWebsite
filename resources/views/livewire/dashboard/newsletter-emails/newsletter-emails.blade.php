@@ -28,7 +28,7 @@
                                             <p class="text-xs font-weight-bold mb-0">{{ $data->email }}</p>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="{{ route('EditService', [app()->getLocale(), 'id' => $data->service_id]) }}"
+                                            <a href="{{ route('EditNewsletterEmails', [app()->getLocale(), 'id' => $data->newsletter_email_id]) }}"
                                                 class="btn-outline-success font-weight-bold text-xs"
                                                 data-toggle="tooltip" data-original-title="Edit user">
                                                 {{ __('Edit') }}
