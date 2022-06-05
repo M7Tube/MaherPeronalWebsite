@@ -20,9 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/maherLogo.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('img/maherLogo.png') }}">
-    <title>
-        {{ __('Dashboard') }}
-    </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -96,7 +93,14 @@
                         <span class="nav-link-text ms-1">{{ __('Services') }}</span>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('NewsletterEmails', app()->getLocale()) }}">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">{{ __('Newsletter Emails') }}</span>
+                    </a>
+                </li>
                 {{-- <li class="nav-item mt-3">
                     <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages
                     </h6>

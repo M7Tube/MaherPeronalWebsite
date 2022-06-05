@@ -17,7 +17,7 @@
                     <li><a class="nav-link scrollto active" href="#hero">{{ __('Home') }}</a></li>
                     <li><a class="nav-link scrollto" href="#about">{{ __('About') }}</a></li>
                     <li><a class="nav-link scrollto" href="#services">{{ __('Services') }}</a></li>
-                    <li><a class="nav-link scrollto " href="#work">{{ __('Email Campaign') }}</a></li>
+                    <li><a class="nav-link scrollto " href="#newsletter">{{ __('Email Campaign') }}</a></li>
                     <li><a class="nav-link scrollto " href="#blog">{{ __('Blog') }}</a></li>
 
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -287,7 +287,7 @@
         </div><!-- End Counter Section -->
 
         <!-- ======= Portfolio Section ======= -->
-        <section id="work" class="portfolio-mf sect-pt4 route">
+        <section id="newsletter" class="portfolio-mf sect-pt4 route">
             <div class="container">
                 {{-- <div class="row">
                     <div class="col-sm-12">
@@ -505,7 +505,7 @@
                         <div class="col-md-4 mb-3">
                             <div class="card card-blog">
                                 <div class="card-img">
-                                    <a href="blog-single.html"><img
+                                    <a href="{{ route('post', ['id' => $post->post_id]) }}"><img
                                             src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $post->picture)) !!}" alt="picture"
                                             class="img-fluid"></a>
                                 </div>
@@ -515,7 +515,8 @@
                                             <h6 class="category">{{ $post->main_title }}</h6>
                                         </div>
                                     </div>
-                                    <h3 class="card-title"><a href="blog-single.html">{{ $post->title }}</a>
+                                    <h3 class="card-title"><a
+                                            href="{{ route('post', [app()->getLocale(), 'id' => $post->post_id]) }}">{{ $post->title }}</a>
                                     </h3>
                                     <p class="card-description">
                                         {{ substr($post->body, 0, 100) }}<a href="" class="text-primary">

@@ -1,5 +1,6 @@
 <?php return array (
   'dashboard.dashboard' => 'App\\Http\\Livewire\\Dashboard\\Dashboard',
+  'dashboard.newsletter-emails.newsletter-emails' => 'App\\Http\\Livewire\\Dashboard\\NewsletterEmails\\NewsletterEmails',
   'dashboard.posts.create-post' => 'App\\Http\\Livewire\\Dashboard\\Posts\\CreatePost',
   'dashboard.posts.posts' => 'App\\Http\\Livewire\\Dashboard\\Posts\\Posts',
   'dashboard.services.create-service' => 'App\\Http\\Livewire\\Dashboard\\Services\\CreateService',

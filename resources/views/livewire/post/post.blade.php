@@ -5,7 +5,7 @@
             <div class="table-cell">
                 <div class="container">
                     <h2 class="hero-title mb-4">{{ $post->main_title }}</h2>
-                    <ol class="breadcrumb d-flex justify-content-center">
+                    {{-- <ol class="breadcrumb d-flex justify-content-center">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
@@ -13,7 +13,7 @@
                             <a href="#">Library</a>
                         </li>
                         <li class="breadcrumb-item active">Data</li>
-                    </ol>
+                    </ol> --}}
                 </div>
             </div>
         </div>
@@ -28,7 +28,8 @@
                     <div class="col-md-8">
                         <div class="post-box">
                             <div class="post-thumb">
-                                <img src="{{ asset('/img/post-1.jpg') }}" class="img-fluid" alt="">
+                                <img src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $post->picture)) !!}"
+                                    class="img-fluid" alt="">
                             </div>
                             <div class="post-meta">
                                 <h1 class="article-title">{{ $post->title }}</h1>
@@ -51,13 +52,13 @@
                                 <p>
                                     {{ $post->body }}
                                 </p>
-                                <blockquote class="blockquote">
+                                {{-- <blockquote class="blockquote">
                                     <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                         Integer posuere erat a ante.</p>
-                                </blockquote>
+                                </blockquote> --}}
                             </div>
                         </div>
-                        <div class="box-comments">
+                        {{-- <div class="box-comments">
                             <div class="title-box-2">
                                 <h4 class="title-comments title-left">Comments (34)</h4>
                             </div>
@@ -169,7 +170,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="col-md-4">
                         <div class="widget-sidebar sidebar-search">
@@ -188,7 +189,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="widget-sidebar">
+                        {{-- <div class="widget-sidebar">
                             <h5 class="sidebar-title">Recent Post</h5>
                             <div class="sidebar-content">
                                 <ul class="list-sidebar">
@@ -256,7 +257,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

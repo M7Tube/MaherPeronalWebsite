@@ -20,10 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo e(asset('img/maherLogo.png')); ?>">
     <link rel="icon" type="image/png" href="<?php echo e(asset('img/maherLogo.png')); ?>">
-    <title>
-        <?php echo e(__('Dashboard')); ?>
-
-    </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -91,7 +87,14 @@
                         <span class="nav-link-text ms-1"><?php echo e(__('Services')); ?></span>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="<?php echo e(route('NewsletterEmails', app()->getLocale())); ?>">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1"><?php echo e(__('Newsletter Emails')); ?></span>
+                    </a>
+                </li>
                 
             </ul>
         </div>

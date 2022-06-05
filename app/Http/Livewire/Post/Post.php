@@ -11,7 +11,7 @@ class Post extends Component
     public function render()
     {
         return view('livewire.post.post', [
-            'post' => ModelsPost::all()->first(),
+            'post' => ModelsPost::where('post_id',request('id'))->first(),
         ]);
     }
 }

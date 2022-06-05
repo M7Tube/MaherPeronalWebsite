@@ -20,7 +20,7 @@ Route::get('/language/{language}', function () {
     return view('pages.HomePage.homepage');
 })->name('homepage');
 //Single Post page in dashboard
-Route::view('/post', 'pages.Post.post')->name('post');
+Route::view('/post/{id}', 'pages.Post.post')->name('post');
 
 Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
 
@@ -49,6 +49,8 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/CreatePost', 'pages.Dashboard.Posts.CreatePost')->name('CreatePost');
     //Edit Post page in dashboard
     Route::view('/EditPost', 'pages.Dashboard.Posts.EditPost')->name('EditPost');
+    //NewsletterEmails page in dashboard
+    Route::view('/NewsletterEmails', 'pages.Dashboard.NewsletterEmails.NewsletterEmails')->name('NewsletterEmails');
 });
 
 require __DIR__ . '/auth.php';
