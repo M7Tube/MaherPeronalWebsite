@@ -17,15 +17,17 @@
                     <li><a class="nav-link scrollto active" href="#hero"><?php echo e(__('Home')); ?></a></li>
                     <li><a class="nav-link scrollto" href="#about"><?php echo e(__('About')); ?></a></li>
                     <li><a class="nav-link scrollto" href="#services"><?php echo e(__('Services')); ?></a></li>
-                    <li><a class="nav-link scrollto " href="#work"><?php echo e(__('Work')); ?></a></li>
+                    <li><a class="nav-link scrollto " href="#work"><?php echo e(__('Email Campaign')); ?></a></li>
                     <li><a class="nav-link scrollto " href="#blog"><?php echo e(__('Blog')); ?></a></li>
 
                     
                     <li><a class="nav-link scrollto" href="#contact"><?php echo e(__('Contact')); ?></a></li>
                     <?php if(app()->getLocale() == 'ar'): ?>
-                        <li><a class="nav-link scrollto " href="<?php echo e(route('homepage', 'en')); ?>">English<i class="bi bi-translate"></i></a></li>
+                        <li><a class="nav-link scrollto " href="<?php echo e(route('homepage', 'en')); ?>">English<i
+                                    class="bi bi-translate"></i></a></li>
                     <?php else: ?>
-                        <li><a class="nav-link scrollto " href="<?php echo e(route('homepage', 'ar')); ?>">عربي<i class="bi bi-translate"></i></a></li>
+                        <li><a class="nav-link scrollto " href="<?php echo e(route('homepage', 'ar')); ?>">عربي<i
+                                    class="bi bi-translate"></i></a></li>
                     <?php endif; ?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -280,62 +282,24 @@
             </div>
         </section><!-- End Portfolio Section -->
 
-        <!-- ======= Testimonials Section ======= -->
-        <div class="testimonials paralax-mf bg-image"
-            style="background-image: url(<?php echo e(asset('img/overlay-bg.jpg')); ?>">
-            <div class="overlay-mf"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
 
-                        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                            <div class="swiper-wrapper">
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box">
-                                        <div class="author-test">
-                                            <img src="<?php echo e(asset('img/testimonial-2.jpg')); ?>" alt=""
-                                                class="rounded-circle b-shadow-a">
-                                            <span class="author">Xavi Alonso</span>
-                                        </div>
-                                        <div class="content-test">
-                                            <p class="description lead">
-                                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem
-                                                ipsum dolor sit amet,
-                                                consectetur adipiscing elit.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- End testimonial item -->
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box">
-                                        <div class="author-test">
-                                            <img src="<?php echo e(asset('img/testimonial-4.jpg')); ?>" alt=""
-                                                class="rounded-circle b-shadow-a">
-                                            <span class="author">Marta Socrate</span>
-                                        </div>
-                                        <div class="content-test">
-                                            <p class="description lead">
-                                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem
-                                                ipsum dolor sit amet,
-                                                consectetur adipiscing elit.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- End testimonial item -->
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-
-                        <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
-
-            </div> -->
-                    </div>
-                </div>
-            </div>
-        </div><!-- End Testimonials Section -->
-
+        <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('newsletter-email')->html();
+} elseif ($_instance->childHasBeenRendered('l1885465296-0')) {
+    $componentId = $_instance->getRenderedChildComponentId('l1885465296-0');
+    $componentTag = $_instance->getRenderedChildComponentTagName('l1885465296-0');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('l1885465296-0');
+} else {
+    $response = \Livewire\Livewire::mount('newsletter-email');
+    $html = $response->html();
+    $_instance->logRenderedChild('l1885465296-0', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
+        <br>
+        <hr>
         <!-- ======= Blog Section ======= -->
         <section id="blog" class="blog-mf sect-pt4 route">
             <div class="container">

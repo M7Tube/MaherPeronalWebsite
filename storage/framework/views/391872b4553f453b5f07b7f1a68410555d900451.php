@@ -33,11 +33,11 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control" id="en_name"
+                                                                        <input class="form-control" id="main_title"
                                                                             type="text" autocomplete="off"
-                                                                            wire:model="en_name" />
+                                                                            wire:model="main_title" />
                                                                         <span class="text-danger">
-                                                                            <?php $__errorArgs = ['en_name'];
+                                                                            <?php $__errorArgs = ['main_title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -49,7 +49,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('English Name')); ?>
+                                                                        <label><?php echo e(__('Main Title')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -74,11 +74,11 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control" id="ar_name"
+                                                                        <input class="form-control" id="title"
                                                                             type="text" autocomplete="off"
-                                                                            wire:model="ar_name" />
+                                                                            wire:model="title" />
                                                                         <span class="text-danger">
-                                                                            <?php $__errorArgs = ['ar_name'];
+                                                                            <?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -90,7 +90,46 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('Arabic Name')); ?>
+                                                                        <label><?php echo e(__('Title')); ?>
+
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <div class="my-2 col-12">
+                                        <div class="Scard card shadow-lg border-2 rounded-lg">
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    <div class="media">
+                                                        <div class="media-body text-right">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-floating mb-1">
+                                                                        <textarea class="form-control" wire:model="body" id="myeditorinstance"></textarea>
+                                                                        <span class="text-danger">
+                                                                            <?php $__errorArgs = ['body'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                                                <?php echo e($message); ?>
+
+                                                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                                        </span>
+                                                                        <label><?php echo e(__('Body')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -115,11 +154,11 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control" id="en_desc"
+                                                                        <input class="form-control" id="keywords"
                                                                             type="text" autocomplete="off"
-                                                                            wire:model="en_desc" />
+                                                                            wire:model="keywords" />
                                                                         <span class="text-danger">
-                                                                            <?php $__errorArgs = ['en_desc'];
+                                                                            <?php $__errorArgs = ['keywords'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -131,7 +170,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('English Description')); ?>
+                                                                        <label><?php echo e(__('Keywords')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -156,11 +195,11 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control" id="ar_desc"
-                                                                            type="text" autocomplete="off"
-                                                                            wire:model="ar_desc" />
+                                                                        <input class="form-control" id="picture"
+                                                                            type="file" autocomplete="off"
+                                                                            wire:model="picture" />
                                                                         <span class="text-danger">
-                                                                            <?php $__errorArgs = ['ar_desc'];
+                                                                            <?php $__errorArgs = ['picture'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -172,7 +211,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('Arabic Description')); ?>
+                                                                        <label><?php echo e(__('Picture')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -186,38 +225,23 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <div class="my-2 col-12">
-                                        <div class="Scard card shadow-lg border-2 rounded-lg">
-                                            <div class="card-content">
-                                                <div class="card-body">
-                                                    <div class="media">
-                                                        <div class="media-body text-right">
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-floating mb-1">
-                                                                        <input class="form-control" id="icon"
-                                                                            type="text" autocomplete="off"
-                                                                            wire:model="icon" />
-                                                                        <span class="text-danger">
-                                                                            <?php $__errorArgs = ['icon'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                                                <?php echo e($message); ?>
+                            <?php if($picture): ?>
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <div class="my-2 col-12">
+                                            <div class="Scard card shadow-lg border-2 rounded-lg">
+                                                <div class="card-content">
+                                                    <div class="card-body">
+                                                        <div class="media">
+                                                            <div class="media-body text-right">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-floating mb-1">
+                                                                            Picture Preview:
 
-                                                                            <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                                                        </span>
-                                                                        <label><?php echo e(__('Icon')); ?>
-
-                                                                        </label>
-                                                                        <u><a href="https://icons.getbootstrap.com"
-                                                                                target="blank">Get It From Here</a></u>
+                                                                            <img src="<?php echo e($picture->temporaryUrl()); ?>"
+                                                                                width="500px">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -228,7 +252,8 @@ unset($__errorArgs, $__bag); ?>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
+                            <input type="hidden" wire:model="user_id">
                         </div>
                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                             <button type="submit"
@@ -242,4 +267,4 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 </div>
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/livewire/dashboard/services/create-service.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/livewire/dashboard/posts/create-post.blade.php ENDPATH**/ ?>

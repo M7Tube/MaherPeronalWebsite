@@ -4,7 +4,7 @@
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                        <h6 class="text-white text-capitalize ps-3"><?php echo e(__('Services')); ?></h6>
+                        <h6 class="text-white text-capitalize ps-3">{{ __('Posts') }}</h6>
                     </div>
                 </div>
                 <div class="card-body px-0 pb-2">
@@ -13,66 +13,67 @@
                             <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('English Title')); ?></th>
+                                        {{ __('Main Title') }}</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('Arabic Title')); ?></th>
+                                        {{ __('Title') }}</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('English Descriptions')); ?></th>
+                                        {{ __('Body') }}</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('Arabic Descriptions')); ?></th>
+                                        {{ __('Picture') }}</th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        <?php echo e(__('Icon')); ?></th>
+                                        {{ __('KeyWords') }}</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        {{ __('User') }}</th>
                                     <th class=""> <a
-                                            href="<?php echo e(route('CreateService', app()->getLocale())); ?>"
+                                            href="{{ route('CreatePost', app()->getLocale()) }}"
                                             class="text-white btn-success btn font-weight-bold text-xs"
                                             data-toggle="tooltip" data-original-title="Edit user">
-                                            <?php echo e(__('Create')); ?>
-
+                                            {{ __('Create') }}
                                         </a></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $__empty_1 = true; $__currentLoopData = $S; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                                @forelse ($P as $data)
                                     <tr>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?php echo e($data->en_name); ?></p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $data->main_title }}</p>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?php echo e($data->ar_name); ?></p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $data->title }}</p>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"> <?php echo e($data->en_desc); ?></p>
+                                            <p class="text-xs font-weight-bold mb-0">
+                                                {{ substr($data->body, 0, 25) . '...' }}</p>
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?php echo e($data->ar_desc); ?></p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $data->picture }}</p>
                                         </td>
                                         <td>
-
-                                            <p class="text-xs font-weight-bold mb-0">(<i
-                                                    class="<?php echo e($data->icon); ?>"></i>) <?php echo e($data->icon); ?></p>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $data->keywords }}</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">{{ $data->user->name ?? '' }}
+                                            </p>
                                         </td>
                                         <td class="align-middle">
-                                            <a href="<?php echo e(route('EditService', [app()->getLocale(), 'id' => $data->service_id])); ?>"
+                                            <a href="{{ route('EditPost', [app()->getLocale(), 'id' => $data->post_id]) }}"
                                                 class="btn-outline-success font-weight-bold text-xs"
                                                 data-toggle="tooltip" data-original-title="Edit user">
-                                                <?php echo e(__('Edit')); ?>
-
+                                                {{ __('Edit') }}
                                             </a>
                                         </td>
                                     </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                                @empty
                                     <tr>
-                                        <td><?php echo e(__('Empty')); ?></td>
+                                        <td>{{ __('Empty') }}</td>
                                     </tr>
-                                <?php endif; ?>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <?php echo e($S->links()); ?>
-
+            {{ $P->links() }}
         </div>
     </div>
 </div>
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/livewire/dashboard/services/services.blade.php ENDPATH**/ ?>

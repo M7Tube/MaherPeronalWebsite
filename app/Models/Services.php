@@ -17,6 +17,7 @@ class Services extends Model
         'ar_desc',
         'icon',
     ];
+
     public  static function search($search)
     {
         return empty($search) ? static::query()

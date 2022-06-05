@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo e(asset('img/maherLogo.png')); ?>">
     <link rel="icon" type="image/png" href="<?php echo e(asset('img/maherLogo.png')); ?>">
     <title>
-        <?php echo e(__('lang.Dashboard')); ?>
+        <?php echo e(__('Dashboard')); ?>
 
     </title>
     <!--     Fonts and icons     -->
@@ -55,7 +55,7 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1"><?php echo e(__('lang.Dashboard')); ?></span>
+                        <span class="nav-link-text ms-1"><?php echo e(__('Dashboard')); ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -63,7 +63,7 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1"><?php echo e(__('lang.Settings')); ?></span>
+                        <span class="nav-link-text ms-1"><?php echo e(__('Settings')); ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -71,7 +71,16 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1"><?php echo e(__('lang.Statistics')); ?></span>
+                        <span class="nav-link-text ms-1"><?php echo e(__('Statistics')); ?></span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="<?php echo e(route('Posts', app()->getLocale())); ?>">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1"><?php echo e(__('Posts')); ?></span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -79,28 +88,10 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1"><?php echo e(__('lang.Services')); ?></span>
+                        <span class="nav-link-text ms-1"><?php echo e(__('Services')); ?></span>
                     </a>
                 </li>
-                <?php if(app()->getLocale() == 'ar'): ?>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo e(route('dashboard', 'en')); ?>">
-                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i class="material-icons opacity-10"></i>
-                            </div>
-                            <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> English</span>
-                        </a>
-                    </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo e(route('dashboard', 'ar')); ?>">
-                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i class="material-icons opacity-10"></i>
-                            </div>
-                            <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> عربي</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
+
                 
             </ul>
         </div>
@@ -127,6 +118,19 @@
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         
+                        <?php if(app()->getLocale() == 'ar'): ?>
+                            <li class="nav-item px-3 d-flex align-items-center">
+                                <a class="" href="<?php echo e(route('dashboard', 'en')); ?>">
+                                    <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> English</span>
+                                </a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item px-3 d-flex align-items-center">
+                                <a class="" href="<?php echo e(route('dashboard', 'ar')); ?>">
+                                    <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> عربي</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                                 <div class="sidenav-toggler-inner">
@@ -138,8 +142,8 @@
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
                             <form action="<?php echo e(route('logout')); ?>" method="POST"><?php echo csrf_field(); ?>
-                                <button type="submit" class="btn nav-link text-body p-0">
-                                    <?php echo e(__('lang.Log Out')); ?>
+                                <button type="submit" class="btn">
+                                    <?php echo e(__('Log Out')); ?>
 
                                 </button>
                             </form>
@@ -419,6 +423,14 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?php echo e(asset('assets/js/material-dashboard.min.js?v=3.0.2')); ?>"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
+            plugins: 'powerpaste advcode table lists checklist',
+            toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
+        });
+    </script>
     <?php echo \Livewire\Livewire::scripts(); ?>
 
 </body>

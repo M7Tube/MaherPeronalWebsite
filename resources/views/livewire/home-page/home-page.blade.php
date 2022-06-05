@@ -17,7 +17,7 @@
                     <li><a class="nav-link scrollto active" href="#hero">{{ __('Home') }}</a></li>
                     <li><a class="nav-link scrollto" href="#about">{{ __('About') }}</a></li>
                     <li><a class="nav-link scrollto" href="#services">{{ __('Services') }}</a></li>
-                    <li><a class="nav-link scrollto " href="#work">{{ __('Work') }}</a></li>
+                    <li><a class="nav-link scrollto " href="#work">{{ __('Email Campaign') }}</a></li>
                     <li><a class="nav-link scrollto " href="#blog">{{ __('Blog') }}</a></li>
 
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -40,9 +40,11 @@
                         </li> --}}
                     <li><a class="nav-link scrollto" href="#contact">{{ __('Contact') }}</a></li>
                     @if (app()->getLocale() == 'ar')
-                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'en') }}">English<i class="bi bi-translate"></i></a></li>
+                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'en') }}">English<i
+                                    class="bi bi-translate"></i></a></li>
                     @else
-                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'ar') }}">عربي<i class="bi bi-translate"></i></a></li>
+                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'ar') }}">عربي<i
+                                    class="bi bi-translate"></i></a></li>
                     @endif
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -478,62 +480,10 @@
             </div>
         </section><!-- End Portfolio Section -->
 
-        <!-- ======= Testimonials Section ======= -->
-        <div class="testimonials paralax-mf bg-image"
-            style="background-image: url({{ asset('img/overlay-bg.jpg') }}">
-            <div class="overlay-mf"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
 
-                        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                            <div class="swiper-wrapper">
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box">
-                                        <div class="author-test">
-                                            <img src="{{ asset('img/testimonial-2.jpg') }}" alt=""
-                                                class="rounded-circle b-shadow-a">
-                                            <span class="author">Xavi Alonso</span>
-                                        </div>
-                                        <div class="content-test">
-                                            <p class="description lead">
-                                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem
-                                                ipsum dolor sit amet,
-                                                consectetur adipiscing elit.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- End testimonial item -->
-
-                                <div class="swiper-slide">
-                                    <div class="testimonial-box">
-                                        <div class="author-test">
-                                            <img src="{{ asset('img/testimonial-4.jpg') }}" alt=""
-                                                class="rounded-circle b-shadow-a">
-                                            <span class="author">Marta Socrate</span>
-                                        </div>
-                                        <div class="content-test">
-                                            <p class="description lead">
-                                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem
-                                                ipsum dolor sit amet,
-                                                consectetur adipiscing elit.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div><!-- End testimonial item -->
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-
-                        <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
-
-            </div> -->
-                    </div>
-                </div>
-            </div>
-        </div><!-- End Testimonials Section -->
-
+        @livewire('newsletter-email')
+        <br>
+        <hr>
         <!-- ======= Blog Section ======= -->
         <section id="blog" class="blog-mf sect-pt4 route">
             <div class="container">

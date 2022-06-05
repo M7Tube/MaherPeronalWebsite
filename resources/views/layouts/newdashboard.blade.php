@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/maherLogo.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('img/maherLogo.png') }}">
     <title>
-        {{ __('lang.Dashboard') }}
+        {{ __('Dashboard') }}
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -53,7 +53,7 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">{{ __('lang.Dashboard') }}</span>
+                        <span class="nav-link-text ms-1">{{ __('Dashboard') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -61,7 +61,7 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">{{ __('lang.Settings') }}</span>
+                        <span class="nav-link-text ms-1">{{ __('Settings') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -69,7 +69,23 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">{{ __('lang.Statistics') }}</span>
+                        <span class="nav-link-text ms-1">{{ __('Statistics') }}</span>
+                    </a>
+                </li>
+                {{-- <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('CreatePost', app()->getLocale()) }}">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">{{ __('Create Post') }}</span>
+                    </a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('Posts', app()->getLocale()) }}">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">{{ __('Posts') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -77,28 +93,10 @@
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1">{{ __('lang.Services') }}</span>
+                        <span class="nav-link-text ms-1">{{ __('Services') }}</span>
                     </a>
                 </li>
-                @if (app()->getLocale() == 'ar')
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('dashboard', 'en') }}">
-                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i class="material-icons opacity-10"></i>
-                            </div>
-                            <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> English</span>
-                        </a>
-                    </li>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('dashboard', 'ar') }}">
-                            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i class="material-icons opacity-10"></i>
-                            </div>
-                            <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> عربي</span>
-                        </a>
-                    </li>
-                @endif
+
                 {{-- <li class="nav-item mt-3">
                     <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages
                     </h6>
@@ -157,6 +155,19 @@
                                 <span class="d-sm-inline d-none">Sign In</span>
                             </a>
                         </li> --}}
+                        @if (app()->getLocale() == 'ar')
+                            <li class="nav-item px-3 d-flex align-items-center">
+                                <a class="" href="{{ route('dashboard', 'en') }}">
+                                    <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> English</span>
+                                </a>
+                            </li>
+                        @else
+                            <li class="nav-item px-3 d-flex align-items-center">
+                                <a class="" href="{{ route('dashboard', 'ar') }}">
+                                    <span class="nav-link-text ms-1"><i class="bi bi-translate"></i> عربي</span>
+                                </a>
+                            </li>
+                        @endif
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                                 <div class="sidenav-toggler-inner">
@@ -168,8 +179,8 @@
                         </li>
                         <li class="nav-item px-3 d-flex align-items-center">
                             <form action="{{ route('logout') }}" method="POST">@csrf
-                                <button type="submit" class="btn nav-link text-body p-0">
-                                    {{ __('lang.Log Out') }}
+                                <button type="submit" class="btn">
+                                    {{ __('Log Out') }}
                                 </button>
                             </form>
                         </li>
@@ -1037,6 +1048,14 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('assets/js/material-dashboard.min.js?v=3.0.2') }}"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
+            plugins: 'powerpaste advcode table lists checklist',
+            toolbar: 'undo redo | blocks| bold italic | bullist numlist checklist | code | table'
+        });
+    </script>
     @livewireScripts
 </body>
 

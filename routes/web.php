@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\NewsletterEmail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::redirect('/', '/language/en');
 Route::get('/language/{language}', function () {
     return view('pages.HomePage.homepage');
@@ -40,6 +43,12 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/EditService', 'pages.Dashboard.Services.EditService')->name('EditService');
     //Create Service page in dashboard
     Route::view('/CreateService', 'pages.Dashboard.Services.CreateService')->name('CreateService');
+    //Posts page in dashboard
+    Route::view('/Posts', 'pages.Dashboard.Posts.Posts')->name('Posts');
+    //Create Post page in dashboard
+    Route::view('/CreatePost', 'pages.Dashboard.Posts.CreatePost')->name('CreatePost');
+    //Edit Post page in dashboard
+    Route::view('/EditPost', 'pages.Dashboard.Posts.EditPost')->name('EditPost');
 });
 
 require __DIR__ . '/auth.php';

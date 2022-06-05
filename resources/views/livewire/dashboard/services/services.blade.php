@@ -68,6 +68,7 @@
                     </div>
                 </div>
             </div>
+            {{ $S->links() }}
         </div>
     </div>
 </div>
