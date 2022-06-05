@@ -319,7 +319,7 @@ echo $html;
                 </div>
                 <div class="row">
                     <?php $__empty_1 = true; $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-                        <div class="col-md-4">
+                        <div class="col-md-4 mb-3">
                             <div class="card card-blog">
                                 <div class="card-img">
                                     <a href="blog-single.html"><img

@@ -502,7 +502,7 @@
                 </div>
                 <div class="row">
                     @forelse ($posts as $post)
-                        <div class="col-md-4">
+                        <div class="col-md-4 mb-3">
                             <div class="card card-blog">
                                 <div class="card-img">
                                     <a href="blog-single.html"><img
