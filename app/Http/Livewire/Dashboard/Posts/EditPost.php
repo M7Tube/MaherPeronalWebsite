@@ -62,7 +62,7 @@ class EditPost extends Component
             if (!$this->picture) {
                 $data->picture = $this->oldpicture;
             } else {
-                $data->picture = $this->picture->getClientOriginalName() ?: $this->oldpicture;
+                $data->picture = $this->picture->getClientOriginalName();
             }
             $data->keywords = $this->keywords;
             $data->save();

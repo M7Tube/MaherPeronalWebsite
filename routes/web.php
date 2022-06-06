@@ -53,6 +53,12 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/NewsletterEmails', 'pages.Dashboard.NewsletterEmails.NewsletterEmails')->name('NewsletterEmails');
     //Edit NewsletterEmails page in dashboard
     Route::view('/EditNewsletterEmails', 'pages.Dashboard.NewsletterEmails.EditNewsletterEmails')->name('EditNewsletterEmails');
+    //Items page in dashboard
+    Route::view('/Items', 'pages.Dashboard.Items.Items')->name('Items');
+    //Edit Items page in dashboard
+    Route::view('/EditItem', 'pages.Dashboard.Items.EditItem')->name('EditItem');
+    //Create Item page in dashboard
+    Route::view('/CreateItem', 'pages.Dashboard.Items.CreateItem')->name('CreateItem');
 });
 
 require __DIR__ . '/auth.php';

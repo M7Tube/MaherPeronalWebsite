@@ -1,5 +1,8 @@
 <?php return array (
   'dashboard.dashboard' => 'App\\Http\\Livewire\\Dashboard\\Dashboard',
+  'dashboard.items.create-item' => 'App\\Http\\Livewire\\Dashboard\\Items\\CreateItem',
+  'dashboard.items.edit-items' => 'App\\Http\\Livewire\\Dashboard\\Items\\EditItems',
+  'dashboard.items.items' => 'App\\Http\\Livewire\\Dashboard\\Items\\Items',
   'dashboard.newsletter-emails.edit-newsletter-emails' => 'App\\Http\\Livewire\\Dashboard\\NewsletterEmails\\EditNewsletterEmails',
   'dashboard.newsletter-emails.newsletter-emails' => 'App\\Http\\Livewire\\Dashboard\\NewsletterEmails\\NewsletterEmails',
   'dashboard.posts.create-post' => 'App\\Http\\Livewire\\Dashboard\\Posts\\CreatePost',

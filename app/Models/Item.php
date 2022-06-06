@@ -18,4 +18,15 @@ class Item extends Model
         'picture',
         'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
+
+    public  static function search($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('en_name', 'like', '%' . $search . '%')->orWhere('ar_name', 'like', '%' . $search . '%');
+    }
 }
