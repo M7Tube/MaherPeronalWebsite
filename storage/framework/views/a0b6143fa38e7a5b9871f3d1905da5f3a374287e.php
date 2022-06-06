@@ -1,19 +1,19 @@
 <?php $__env->startSection('head'); ?>
-    <title><?php echo e(__('lang.Settings')); ?></title>
+    <title><?php echo e(__('Settings')); ?></title>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('body'); ?>
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('dashboard.setttings.settings')->html();
-} elseif ($_instance->childHasBeenRendered('e4NsWXP')) {
-    $componentId = $_instance->getRenderedChildComponentId('e4NsWXP');
-    $componentTag = $_instance->getRenderedChildComponentTagName('e4NsWXP');
+} elseif ($_instance->childHasBeenRendered('cFmOHWl')) {
+    $componentId = $_instance->getRenderedChildComponentId('cFmOHWl');
+    $componentTag = $_instance->getRenderedChildComponentTagName('cFmOHWl');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('e4NsWXP');
+    $_instance->preserveRenderedChild('cFmOHWl');
 } else {
     $response = \Livewire\Livewire::mount('dashboard.setttings.settings');
     $html = $response->html();
-    $_instance->logRenderedChild('e4NsWXP', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('cFmOHWl', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

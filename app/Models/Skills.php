@@ -15,4 +15,11 @@ class Skills extends Model
         'ar_name',
         'percent',
     ];
+
+
+    public  static function search($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('en_name', 'like', '%' . $search . '%')->orWhere('ar_name', 'like', '%' . $search . '%');
+    }
 }

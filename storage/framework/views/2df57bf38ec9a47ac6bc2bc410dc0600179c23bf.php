@@ -51,7 +51,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.English Personal Name')); ?>
+                                                                        <label><?php echo e(__('English Personal Name')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -93,7 +93,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Arabic Personal Name')); ?>
+                                                                        <label><?php echo e(__('Arabic Personal Name')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -117,7 +117,7 @@ unset($__errorArgs, $__bag); ?>
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <?php echo e(__('lang.English Personal Description')); ?>
+                                                                    <?php echo e(__('English Personal Description')); ?>
 
                                                                 </div>
                                                             </div>
@@ -159,7 +159,7 @@ unset($__errorArgs, $__bag); ?>
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <?php echo e(__('lang.Arabic Personal Description')); ?>
+                                                                    <?php echo e(__('Arabic Personal Description')); ?>
 
                                                                 </div>
                                                             </div>
@@ -218,7 +218,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.English Job Title')); ?>
+                                                                        <label><?php echo e(__('English Job Title')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -259,7 +259,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Arabic Job Title')); ?>
+                                                                        <label><?php echo e(__('Arabic Job Title')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -300,7 +300,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.English Skills')); ?>
+                                                                        <label><?php echo e(__('English Skills')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -341,7 +341,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Arabic Skills')); ?>
+                                                                        <label><?php echo e(__('Arabic Skills')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -365,7 +365,7 @@ unset($__errorArgs, $__bag); ?>
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <?php echo e(__('lang.English Contact With Us Message')); ?>
+                                                                    <?php echo e(__('English Contact With Us Message')); ?>
 
                                                                 </div>
                                                             </div>
@@ -407,7 +407,7 @@ unset($__errorArgs, $__bag); ?>
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <?php echo e(__('lang.Arabic Contact With Us Message')); ?>
+                                                                    <?php echo e(__('Arabic Contact With Us Message')); ?>
 
                                                                 </div>
                                                             </div>
@@ -466,7 +466,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Email')); ?>
+                                                                        <label><?php echo e(__('Email')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -507,7 +507,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Phone Number')); ?>
+                                                                        <label><?php echo e(__('Phone Number')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -532,9 +532,8 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="instagram" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="instagram"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="instagram" />
                                                                         <span class="text-danger">
                                                                             <?php $__errorArgs = ['instagram'];
@@ -549,7 +548,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Instagram')); ?>
+                                                                        <label><?php echo e(__('Instagram')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -574,9 +573,8 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="linkedIn" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="linkedIn"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="linkedIn" />
                                                                         <span class="text-danger">
                                                                             <?php $__errorArgs = ['linkedIn'];
@@ -591,7 +589,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.LinkedIn')); ?>
+                                                                        <label><?php echo e(__('LinkedIn')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -616,9 +614,8 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="twitter" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="twitter"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="twitter" />
                                                                         <span class="text-danger">
                                                                             <?php $__errorArgs = ['twitter'];
@@ -633,7 +630,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Twitter')); ?>
+                                                                        <label><?php echo e(__('Twitter')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -658,9 +655,8 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="facebook" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="facebook"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="facebook" />
                                                                         <span class="text-danger">
                                                                             <?php $__errorArgs = ['facebook'];
@@ -675,7 +671,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Facebook')); ?>
+                                                                        <label><?php echo e(__('Facebook')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -700,9 +696,8 @@ unset($__errorArgs, $__bag); ?>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="location" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="location"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="location" />
                                                                         <span class="text-danger">
                                                                             <?php $__errorArgs = ['location'];
@@ -717,7 +712,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                                         </span>
-                                                                        <label><?php echo e(__('lang.Location')); ?>
+                                                                        <label><?php echo e(__('Location')); ?>
 
                                                                         </label>
                                                                     </div>
@@ -734,7 +729,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                             <button type="submit"
-                                class="mx-auto w-100 btn btn-block btn-outline-success"><?php echo e(__('lang.Edit')); ?>
+                                class="mx-auto w-100 btn btn-block btn-outline-success"><?php echo e(__('Edit')); ?>
 
                                 <i class="bi bi-pencil-fill"></i></button>
                         </div>

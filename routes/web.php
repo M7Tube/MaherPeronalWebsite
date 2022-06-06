@@ -60,6 +60,12 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/EditItem', 'pages.Dashboard.Items.EditItem')->name('EditItem');
     //Create Item page in dashboard
     Route::view('/CreateItem', 'pages.Dashboard.Items.CreateItem')->name('CreateItem');
+    //Skills page in dashboard
+    Route::view('/Skills', 'pages.Dashboard.Skills.Skills')->name('Skills');
+    //Edit Skills page in dashboard
+    Route::view('/EditSkill', 'pages.Dashboard.Skills.EditSkill')->name('EditSkill');
+    //Create Skill page in dashboard
+    Route::view('/CreateSkill', 'pages.Dashboard.Skills.CreateSkill')->name('CreateSkill');
 });
 
 require __DIR__ . '/auth.php';
