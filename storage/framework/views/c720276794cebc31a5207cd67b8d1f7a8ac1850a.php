@@ -110,26 +110,28 @@
                                     </div>
                                     <div class="skill-mf">
                                         <p class="title-s"><?php echo e(__('Skill')); ?></p>
-                                        <span>HTML</span> <span class="pull-right">85%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 85%;"
-                                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>CSS3</span> <span class="pull-right">75%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 75%"
-                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>PHP</span> <span class="pull-right">50%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 50%"
-                                                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 90%"
-                                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                        <?php $__empty_1 = true; $__currentLoopData = $skills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                                            <?php if(app()->getLocale() == 'ar'): ?>
+                                                <span><?php echo e($skill->ar_name); ?></span> <span
+                                                    class="pull-right"><?php echo e($skill->percent); ?>%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar"
+                                                        style="width: <?php echo e($skill->percent); ?>%;"
+                                                        aria-valuenow="<?php echo e($skill->percent); ?>" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            <?php else: ?>
+                                                <span><?php echo e($skill->en_name); ?></span> <span
+                                                    class="pull-right"><?php echo e($skill->percent); ?>%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar"
+                                                        style="width: <?php echo e($skill->percent); ?>%;"
+                                                        aria-valuenow="<?php echo e($skill->percent); ?>" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -291,38 +293,41 @@
                     </div>
                     <?php $__empty_1 = true; $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                         <div class="col-md-4">
-                            <div class="work-box">
-                                
-                                <div class="work-img">
-                                    <img src="data:image/png|jpg|jpeg;base64, <?php echo base64_encode(file_get_contents('../storage/app/img/' . $item->picture)); ?>" alt="Picture"
-                                        class="img-fluid">
-                                </div>
-                                
-                                <div class="work-content">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <?php if(app()->getLocale() == 'ar'): ?>
-                                                <h2 class="w-title"><?php echo e($item->ar_name); ?></h2>
-                                            <?php else: ?>
-                                                <h2 class="w-title"><?php echo e($item->en_name); ?></h2>
-                                            <?php endif; ?>
-                                            <?php if(app()->getLocale() == 'ar'): ?>
-                                                <div class="w-more">
-                                                    <span class="text-center"><?php echo e($item->ar_desc); ?></span><br>
-                                                    <span class="w-date"><?php echo e($item->created_at); ?></span>
-                                                </div>
-                                            <?php else: ?>
-                                                <div class="w-more">
-                                                    <span class="text-center"><?php echo e($item->en_desc); ?></span><br>
-                                                    <span class="w-date"><?php echo e($item->created_at); ?></span>
-                                                </div>
-                                            <?php endif; ?>
+                            <a href="<?php echo e(route('ShowItem', [app()->getLocale(), 'id' => $item->item_id])); ?>"
+                                style="text-decoration: none;">
+                                <div class="work-box">
+                                    
+                                    <div class="work-img">
+                                        <img src="data:image/png|jpg|jpeg;base64, <?php echo base64_encode(file_get_contents('../storage/app/img/' . $item->picture)); ?>" alt="Picture"
+                                            class="img-fluid">
+                                    </div>
+                                    
+                                    <div class="work-content">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <?php if(app()->getLocale() == 'ar'): ?>
+                                                    <h2 class="w-title"><?php echo e($item->ar_name); ?></h2>
+                                                <?php else: ?>
+                                                    <h2 class="w-title"><?php echo e($item->en_name); ?></h2>
+                                                <?php endif; ?>
+                                                <?php if(app()->getLocale() == 'ar'): ?>
+                                                    <div class="w-more">
+                                                        <span class="text-center"><?php echo e($item->ar_desc); ?></span><br>
+                                                        <span class="w-date"><?php echo e($item->created_at); ?></span>
+                                                    </div>
+                                                <?php else: ?>
+                                                    <div class="w-more">
+                                                        <span class="text-center"><?php echo e($item->en_desc); ?></span><br>
+                                                        <span class="w-date"><?php echo e($item->created_at); ?></span>
+                                                    </div>
+                                                <?php endif; ?>
 
+                                            </div>
+                                            
                                         </div>
-                                        
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                         <h4 class="text-center"><?php echo e(__('Empty')); ?></h4>

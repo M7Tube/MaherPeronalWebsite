@@ -127,26 +127,28 @@
                                     </div>
                                     <div class="skill-mf">
                                         <p class="title-s">{{ __('Skill') }}</p>
-                                        <span>HTML</span> <span class="pull-right">85%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 85%;"
-                                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>CSS3</span> <span class="pull-right">75%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 75%"
-                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>PHP</span> <span class="pull-right">50%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 50%"
-                                                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <span>JAVASCRIPT</span> <span class="pull-right">90%</span>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 90%"
-                                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
+                                        @forelse ($skills as $skill)
+                                            @if (app()->getLocale() == 'ar')
+                                                <span>{{ $skill->ar_name }}</span> <span
+                                                    class="pull-right">{{ $skill->percent }}%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar"
+                                                        style="width: {{ $skill->percent }}%;"
+                                                        aria-valuenow="{{ $skill->percent }}" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            @else
+                                                <span>{{ $skill->en_name }}</span> <span
+                                                    class="pull-right">{{ $skill->percent }}%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar"
+                                                        style="width: {{ $skill->percent }}%;"
+                                                        aria-valuenow="{{ $skill->percent }}" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            @endif
+                                        @empty
+                                        @endforelse
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -324,44 +326,47 @@
                     </div>
                     @forelse ($items as $item)
                         <div class="col-md-4">
-                            <div class="work-box">
-                                {{-- <a href="{!! base64_encode(file_get_contents('../storage/app/img/' . $item->picture)) !!}" data-gallery="portfolioGallery"
+                            <a href="{{ route('ShowItem', [app()->getLocale(), 'id' => $item->item_id]) }}"
+                                style="text-decoration: none;">
+                                <div class="work-box">
+                                    {{-- <a href="{!! base64_encode(file_get_contents('../storage/app/img/' . $item->picture)) !!}" data-gallery="portfolioGallery"
                                     class="portfolio-lightbox"> --}}
-                                <div class="work-img">
-                                    <img src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $item->picture)) !!}" alt="Picture"
-                                        class="img-fluid">
-                                </div>
-                                {{-- </a> --}}
-                                <div class="work-content">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            @if (app()->getLocale() == 'ar')
-                                                <h2 class="w-title">{{ $item->ar_name }}</h2>
-                                            @else
-                                                <h2 class="w-title">{{ $item->en_name }}</h2>
-                                            @endif
-                                            @if (app()->getLocale() == 'ar')
-                                                <div class="w-more">
-                                                    <span class="text-center">{{ $item->ar_desc }}</span><br>
-                                                    <span class="w-date">{{ $item->created_at }}</span>
-                                                </div>
-                                            @else
-                                                <div class="w-more">
-                                                    <span class="text-center">{{ $item->en_desc }}</span><br>
-                                                    <span class="w-date">{{ $item->created_at }}</span>
-                                                </div>
-                                            @endif
+                                    <div class="work-img">
+                                        <img src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $item->picture)) !!}" alt="Picture"
+                                            class="img-fluid">
+                                    </div>
+                                    {{-- </a> --}}
+                                    <div class="work-content">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                @if (app()->getLocale() == 'ar')
+                                                    <h2 class="w-title">{{ $item->ar_name }}</h2>
+                                                @else
+                                                    <h2 class="w-title">{{ $item->en_name }}</h2>
+                                                @endif
+                                                @if (app()->getLocale() == 'ar')
+                                                    <div class="w-more">
+                                                        <span class="text-center">{{ $item->ar_desc }}</span><br>
+                                                        <span class="w-date">{{ $item->created_at }}</span>
+                                                    </div>
+                                                @else
+                                                    <div class="w-more">
+                                                        <span class="text-center">{{ $item->en_desc }}</span><br>
+                                                        <span class="w-date">{{ $item->created_at }}</span>
+                                                    </div>
+                                                @endif
 
-                                        </div>
-                                        {{-- <div class="col-sm-4">
+                                            </div>
+                                            {{-- <div class="col-sm-4">
                                             <div class="w-like">
                                                 <a href="portfolio-details.html"> <span
                                                         class="bi bi-plus-circle"></span></a>
                                             </div>
                                         </div> --}}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @empty
                         <h4 class="text-center">{{ __('Empty') }}</h4>

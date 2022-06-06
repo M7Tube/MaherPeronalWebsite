@@ -6,6 +6,7 @@ use App\Models\AppSettings;
 use App\Models\Item;
 use App\Models\Post;
 use App\Models\Services;
+use App\Models\Skills;
 use App\Models\Statistics;
 use Livewire\Component;
 
@@ -16,6 +17,7 @@ class HomePage extends Component
     public $statistics;
     public $posts;
     public $items;
+    public $skills;
 
     public function mount()
     {
@@ -24,6 +26,7 @@ class HomePage extends Component
         $this->statistics = Statistics::first();
         $this->posts = Post::all()->take(6);
         $this->items = Item::all()->take(6);
+        $this->skills = Skills::all();
     }
 
     public function render()

@@ -21,7 +21,8 @@ Route::get('/language/{language}', function () {
 })->name('homepage');
 //Single Post page in dashboard
 Route::view('/post/{id}', 'pages.Post.post')->name('post');
-
+//Single Item page in dashboard
+Route::view('/{language}/Item/{id}', 'pages.Items.ShowItem')->name('ShowItem');
 Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
 
     Route::get('/dashboard', function () {
