@@ -287,7 +287,7 @@
         </div><!-- End Counter Section -->
 
         <!-- ======= Portfolio Section ======= -->
-        <section id="newsletter" class="portfolio-mf sect-pt4 route">
+        <section id="items" class="portfolio-mf sect-pt4 route">
             <div class="container">
                 {{-- <div class="row">
                     <div class="col-sm-12">
@@ -312,176 +312,69 @@
                         </div>
                     </div>
                 </div> --}}
-                {{-- <div class="row">
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="{{ asset('img/work-1.jpg') }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="{{ asset('img/work-1.jpg') }}" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Lorem impsum dolor</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            {{ __('Items') }}
+                        </h3>
+                        <p class="subtitle-a">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="line-mf"></div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="{{ asset('img/work-2.jpg') }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
+                    @forelse ($items as $item)
+                        <div class="col-md-4">
+                            <div class="work-box">
+                                {{-- <a href="{!! base64_encode(file_get_contents('../storage/app/img/' . $item->picture)) !!}" data-gallery="portfolioGallery"
+                                    class="portfolio-lightbox"> --}}
                                 <div class="work-img">
-                                    <img src="{{ asset('img/work-2.jpg') }}" alt="" class="img-fluid">
+                                    <img src="data:image/png|jpg|jpeg;base64, {!! base64_encode(file_get_contents('../storage/app/img/' . $item->picture)) !!}" alt="Picture"
+                                        class="img-fluid">
                                 </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Loreda Cuno Nere</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="{{ asset('img/work-3.jpg') }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="{{ asset('img/work-3.jpg') }}" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Mavrito Lana Dere</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="{{ asset('img/work-4.jpg') }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="{{ asset('img/work-4.jpg') }}" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Bindo Laro Cado</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="{{ asset('img/work-5.jpg') }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="{{ asset('img/work-5.jpg') }}" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Studio Lena Mado</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2018</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="{{ asset('img/work-6.jpg') }}" data-gallery="portfolioGallery"
-                                class="portfolio-lightbox">
-                                <div class="work-img">
-                                    <img src="{{ asset('img/work-6.jpg') }}" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title">Studio Big Bang</h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory">Web Design</span> / <span
-                                                class="w-date">18 Sep. 2017</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                            <a href="portfolio-details.html"> <span
-                                                    class="bi bi-plus-circle"></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                {{-- </a> --}}
+                                <div class="work-content">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            @if (app()->getLocale() == 'ar')
+                                                <h2 class="w-title">{{ $item->ar_name }}</h2>
+                                            @else
+                                                <h2 class="w-title">{{ $item->en_name }}</h2>
+                                            @endif
+                                            @if (app()->getLocale() == 'ar')
+                                                <div class="w-more">
+                                                    <span class="text-center">{{ $item->ar_desc }}</span><br>
+                                                    <span class="w-date">{{ $item->created_at }}</span>
+                                                </div>
+                                            @else
+                                                <div class="w-more">
+                                                    <span class="text-center">{{ $item->en_desc }}</span><br>
+                                                    <span class="w-date">{{ $item->created_at }}</span>
+                                                </div>
+                                            @endif
 
-                </div> --}}
+                                        </div>
+                                        {{-- <div class="col-sm-4">
+                                            <div class="w-like">
+                                                <a href="portfolio-details.html"> <span
+                                                        class="bi bi-plus-circle"></span></a>
+                                            </div>
+                                        </div> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <h4 class="text-center">{{ __('Empty') }}</h4>
+                    @endforelse
+                </div>
             </div>
         </section><!-- End Portfolio Section -->
-
-
-        @livewire('newsletter-email')
+        <br>
+        <hr>
+        <section id="newsletter" class="portfolio-mf sect-pt4 route">
+            @livewire('newsletter-email')
+        </section>
+        <br>
         <br>
         <hr>
         <!-- ======= Blog Section ======= -->

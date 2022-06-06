@@ -1,19 +1,19 @@
 <?php $__env->startSection('head'); ?>
-    <title><?php echo e(__('lang.Services')); ?></title>
+    <title><?php echo e(__('Services')); ?></title>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('body'); ?>
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('dashboard.services.services')->html();
-} elseif ($_instance->childHasBeenRendered('vUOR9oK')) {
-    $componentId = $_instance->getRenderedChildComponentId('vUOR9oK');
-    $componentTag = $_instance->getRenderedChildComponentTagName('vUOR9oK');
+} elseif ($_instance->childHasBeenRendered('awkniSc')) {
+    $componentId = $_instance->getRenderedChildComponentId('awkniSc');
+    $componentTag = $_instance->getRenderedChildComponentTagName('awkniSc');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('vUOR9oK');
+    $_instance->preserveRenderedChild('awkniSc');
 } else {
     $response = \Livewire\Livewire::mount('dashboard.services.services');
     $html = $response->html();
-    $_instance->logRenderedChild('vUOR9oK', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('awkniSc', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

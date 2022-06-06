@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\HomePage;
 
 use App\Models\AppSettings;
+use App\Models\Item;
 use App\Models\Post;
 use App\Models\Services;
 use App\Models\Statistics;
@@ -14,6 +15,7 @@ class HomePage extends Component
     public $services;
     public $statistics;
     public $posts;
+    public $items;
 
     public function mount()
     {
@@ -21,6 +23,7 @@ class HomePage extends Component
         $this->services = Services::all()->take(6);
         $this->statistics = Statistics::first();
         $this->posts = Post::all()->take(6);
+        $this->items = Item::all()->take(6);
     }
 
     public function render()

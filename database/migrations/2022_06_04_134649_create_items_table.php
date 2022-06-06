@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->id();
+            $table->id('item_id');
+            $table->text('ar_name');
+            $table->text('en_name');
+            $table->text('ar_desc');
+            $table->text('en_desc');
+            $table->text('picture');
+            $table->bigInteger('user_id')->references('user_id')->on('users')->onDelete('cascade')->onUpdate('cascade')->index()->unsigned();
             $table->timestamps();
         });
     }

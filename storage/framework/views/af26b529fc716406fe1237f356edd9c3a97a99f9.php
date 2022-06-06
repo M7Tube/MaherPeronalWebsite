@@ -1,19 +1,19 @@
 <?php $__env->startSection('head'); ?>
-    <title><?php echo e(__('lang.Edit Service')); ?></title>
+    <title><?php echo e(__('Edit Service')); ?></title>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('body'); ?>
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('dashboard.services.edit-service')->html();
-} elseif ($_instance->childHasBeenRendered('WgYxLuB')) {
-    $componentId = $_instance->getRenderedChildComponentId('WgYxLuB');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WgYxLuB');
+} elseif ($_instance->childHasBeenRendered('tGHhYdE')) {
+    $componentId = $_instance->getRenderedChildComponentId('tGHhYdE');
+    $componentTag = $_instance->getRenderedChildComponentTagName('tGHhYdE');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WgYxLuB');
+    $_instance->preserveRenderedChild('tGHhYdE');
 } else {
     $response = \Livewire\Livewire::mount('dashboard.services.edit-service');
     $html = $response->html();
-    $_instance->logRenderedChild('WgYxLuB', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('tGHhYdE', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

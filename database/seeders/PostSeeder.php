@@ -28,7 +28,7 @@ class PostSeeder extends Seeder
             cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet
             ligula.
             Nulla quis lorem ut libero malesuada feugiat.',
-            'picture' => 'fdas.jpg',
+            'picture' => '5.png',
             'main_title' => 'Test sdf TEssdf',
             'title' => 'heheheh',
             'keywords' => 'test,tt,ssadf,kljaf'
