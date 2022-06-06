@@ -1,6 +1,6 @@
 @extends('layouts.newdashboard')
 @section('head')
-    <title>{{ __('lang.Settings') }}</title>
+    <title>{{ __('Settings') }}</title>
 @endsection
 @section('body')
     @livewire('dashboard.setttings.settings')

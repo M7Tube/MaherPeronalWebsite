@@ -26,6 +26,12 @@ class Statistics extends Component
 
     public function edit()
     {
+        $this->validate([
+            'work_complated' => ['required', 'integer'],
+            'years_of_experience' => ['required', 'integer'],
+            'total_clients' => ['required', 'integer'],
+            'award_won' => ['required', 'integer'],
+        ]);
         $data = ModelsStatistics::first();
         $data->work_complated = $this->work_complated;
         $data->years_of_experience = $this->years_of_experience;

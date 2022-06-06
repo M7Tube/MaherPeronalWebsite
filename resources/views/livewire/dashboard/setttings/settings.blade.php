@@ -44,7 +44,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.English Personal Name') }}
+                                                                        <label>{{ __('English Personal Name') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -77,7 +77,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Arabic Personal Name') }}
+                                                                        <label>{{ __('Arabic Personal Name') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -100,7 +100,7 @@
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    {{ __('lang.English Personal Description') }}
+                                                                    {{ __('English Personal Description') }}
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -112,7 +112,7 @@
                                                                             {{ $message }}
                                                                         @enderror
                                                                     </span>
-                                                                    {{-- <label>{{ __('lang.English Personal Description') }}
+                                                                    {{-- <label>{{ __('English Personal Description') }}
                                                                         </label> --}}
                                                                 </div>
                                                             </div>
@@ -134,7 +134,7 @@
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    {{ __('lang.Arabic Personal Description') }}
+                                                                    {{ __('Arabic Personal Description') }}
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -146,7 +146,7 @@
                                                                             {{ $message }}
                                                                         @enderror
                                                                     </span>
-                                                                    {{-- <label>{{ __('lang.Arabic Personal Description') }}
+                                                                    {{-- <label>{{ __('Arabic Personal Description') }}
                                                                     </label> --}}
                                                                 </div>
                                                             </div>
@@ -177,7 +177,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.English Job Title') }}
+                                                                        <label>{{ __('English Job Title') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -209,7 +209,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Arabic Job Title') }}
+                                                                        <label>{{ __('Arabic Job Title') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -241,7 +241,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.English Skills') }}
+                                                                        <label>{{ __('English Skills') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -273,7 +273,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Arabic Skills') }}
+                                                                        <label>{{ __('Arabic Skills') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -296,7 +296,7 @@
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    {{ __('lang.English Contact With Us Message') }}
+                                                                    {{ __('English Contact With Us Message') }}
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -308,7 +308,7 @@
                                                                             {{ $message }}
                                                                         @enderror
                                                                     </span>
-                                                                    {{-- <label>{{ __('lang.English Personal Description') }}
+                                                                    {{-- <label>{{ __('English Personal Description') }}
                                                                         </label> --}}
                                                                 </div>
                                                             </div>
@@ -330,7 +330,7 @@
                                                         <div class="media-body text-right">
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    {{ __('lang.Arabic Contact With Us Message') }}
+                                                                    {{ __('Arabic Contact With Us Message') }}
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -342,7 +342,7 @@
                                                                             {{ $message }}
                                                                         @enderror
                                                                     </span>
-                                                                    {{-- <label>{{ __('lang.Arabic Personal Description') }}
+                                                                    {{-- <label>{{ __('Arabic Personal Description') }}
                                                                     </label> --}}
                                                                 </div>
                                                             </div>
@@ -373,7 +373,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Email') }}
+                                                                        <label>{{ __('Email') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -405,7 +405,7 @@
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Phone Number') }}
+                                                                        <label>{{ __('Phone Number') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -429,16 +429,15 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="instagram" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="instagram"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="instagram" />
                                                                         <span class="text-danger">
                                                                             @error('instagram')
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Instagram') }}
+                                                                        <label>{{ __('Instagram') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -462,16 +461,15 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="linkedIn" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="linkedIn"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="linkedIn" />
                                                                         <span class="text-danger">
                                                                             @error('linkedIn')
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.LinkedIn') }}
+                                                                        <label>{{ __('LinkedIn') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -495,16 +493,15 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="twitter" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="twitter"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="twitter" />
                                                                         <span class="text-danger">
                                                                             @error('twitter')
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Twitter') }}
+                                                                        <label>{{ __('Twitter') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -528,16 +525,15 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="facebook" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="facebook"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="facebook" />
                                                                         <span class="text-danger">
                                                                             @error('facebook')
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Facebook') }}
+                                                                        <label>{{ __('Facebook') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -561,16 +557,15 @@
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="form-floating mb-1">
-                                                                        <input class="form-control"
-                                                                            id="location" type="text"
-                                                                            autocomplete="off"
+                                                                        <input class="form-control" id="location"
+                                                                            type="text" autocomplete="off"
                                                                             wire:model="location" />
                                                                         <span class="text-danger">
                                                                             @error('location')
                                                                                 {{ $message }}
                                                                             @enderror
                                                                         </span>
-                                                                        <label>{{ __('lang.Location') }}
+                                                                        <label>{{ __('Location') }}
                                                                         </label>
                                                                     </div>
                                                                 </div>
@@ -586,7 +581,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                             <button type="submit"
-                                class="mx-auto w-100 btn btn-block btn-outline-success">{{ __('lang.Edit') }}
+                                class="mx-auto w-100 btn btn-block btn-outline-success">{{ __('Edit') }}
                                 <i class="bi bi-pencil-fill"></i></button>
                         </div>
                     </form>

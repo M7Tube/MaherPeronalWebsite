@@ -56,6 +56,27 @@ class Settings extends Component
 
     public function edit()
     {
+        $this->validate([
+            'en_peronal_name'=>['required'],
+            'ar_peronal_name'=>['required'],
+            'en_peronal_desc'=>['required'],
+            'ar_peronal_desc'=>['required'],
+            'en_job_title'=>['required'],
+            'ar_job_title'=>['required'],
+            'en_skills'=>['required'],
+            'ar_skills'=>['required'],
+            'en_contactWithUs_message'=>['required'],
+            'ar_contactWithUs_message'=>['required'],
+            'email'=>['required'],
+            'phone'=>['required'],
+            'small_personal_pic'=>['required'],
+            'big_personal_pic'=>['required'],
+            'facebook'=>['required'],
+            'twitter'=>['required'],
+            'instagram'=>['required'],
+            'linkedIn'=>['required'],
+            'location'=>['required'],
+        ]);
         $data = AppSettings::first();
         $data->en_peronal_name = $this->en_peronal_name;
         $data->ar_peronal_name = $this->ar_peronal_name;
@@ -78,7 +99,7 @@ class Settings extends Component
         $data->location = $this->location;
         $data->save();
         $this->message = "Done !";
-        return redirect()->route('Settings',app()->getLocale());
+        return redirect()->route('Settings', app()->getLocale());
     }
 
     public function render()
