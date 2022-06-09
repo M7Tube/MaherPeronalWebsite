@@ -188,7 +188,7 @@
                         </div> --}}
                     </div>
                     <div class="col-md-4">
-                        <div class="widget-sidebar sidebar-search">
+                        {{-- <div class="widget-sidebar sidebar-search">
                             <h5 class="sidebar-title">Search</h5>
                             <div class="sidebar-content">
                                 <form>
@@ -203,7 +203,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- <div class="widget-sidebar">
                             <h5 class="sidebar-title">Recent Post</h5>
                             <div class="sidebar-content">

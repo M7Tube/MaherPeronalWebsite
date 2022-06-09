@@ -35,39 +35,22 @@
     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('home-page.home-page')->html();
-} elseif ($_instance->childHasBeenRendered('IyouNsx')) {
-    $componentId = $_instance->getRenderedChildComponentId('IyouNsx');
-    $componentTag = $_instance->getRenderedChildComponentTagName('IyouNsx');
+} elseif ($_instance->childHasBeenRendered('sLoUvi8')) {
+    $componentId = $_instance->getRenderedChildComponentId('sLoUvi8');
+    $componentTag = $_instance->getRenderedChildComponentTagName('sLoUvi8');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('IyouNsx');
+    $_instance->preserveRenderedChild('sLoUvi8');
 } else {
     $response = \Livewire\Livewire::mount('home-page.home-page');
     $html = $response->html();
-    $_instance->logRenderedChild('IyouNsx', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('sLoUvi8', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
 
     <!-- ======= Footer ======= -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="copyright-box">
-                        <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
-                        <div class="credits">
-                            <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-            -->
-                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </footer><!-- End  Footer -->
 
     <div id="preloader"></div>

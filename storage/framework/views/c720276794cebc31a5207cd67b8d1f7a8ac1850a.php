@@ -421,104 +421,21 @@ echo $html;
         <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
             style="background-image: url(<?php echo e(asset('img/overlay-bg.jpg')); ?>">
             <div class="overlay-mf"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="contact-mf">
-                            <div id="contact" class="box-shadow-full">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="title-box-2">
-                                            <h5 class="title-left">
-                                                Send Message Us
-                                            </h5>
-                                        </div>
-                                        <div>
-                                            <form action="forms/contact.php" method="post" role="form"
-                                                class="php-email-form">
-                                                <div class="row">
-                                                    <div class="col-md-12 mb-3">
-                                                        <div class="form-group">
-                                                            <input type="text" name="name" class="form-control"
-                                                                id="name" placeholder="Your Name" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 mb-3">
-                                                        <div class="form-group">
-                                                            <input type="email" class="form-control" name="email"
-                                                                id="email" placeholder="Your Email" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 mb-3">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" name="subject"
-                                                                id="subject" placeholder="Subject" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12 text-center my-3">
-                                                        <div class="loading">Loading</div>
-                                                        <div class="error-message"></div>
-                                                        <div class="sent-message">Your message has been sent. Thank
-                                                            you!</div>
-                                                    </div>
-                                                    <div class="col-md-12 text-center">
-                                                        <button type="submit"
-                                                            class="button button-a button-big button-rouded">Send
-                                                            Message</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="title-box-2 pt-4 pt-md-0">
-                                            <h5 class="title-left">
-                                                Get in Touch
-                                            </h5>
-                                        </div>
-                                        <div class="more-info">
-                                            <?php if(app()->getLocale() == 'ar'): ?>
-                                                <p class="lead">
-                                                    <?php echo e($info->ar_contactWithUs_message); ?>
-
-                                                </p>
-                                            <?php else: ?>
-                                                <p class="lead">
-                                                    <?php echo e($info->en_contactWithUs_message); ?>
-
-                                                </p>
-                                            <?php endif; ?>
-                                            <ul class="list-ico">
-                                                <li><span class="bi bi-geo-alt"></span>
-                                                    <?php echo e($info->location); ?></li>
-                                                <li><span class="bi bi-phone"></span><?php echo e($info->phone); ?></li>
-                                                <li><span class="bi bi-envelope"></span><?php echo e($info->email); ?></li>
-                                            </ul>
-                                        </div>
-                                        <div class="socials">
-                                            <ul>
-                                                <li><a href="<?php echo e($info->facebook); ?>"><span class="ico-circle"><i
-                                                                class="bi bi-facebook"></i></span></a></li>
-                                                <li><a href="<?php echo e($info->instagram); ?>"><span class="ico-circle"><i
-                                                                class="bi bi-instagram"></i></span></a></li>
-                                                <li><a href="<?php echo e($info->twitter); ?>"><span class="ico-circle"><i
-                                                                class="bi bi-twitter"></i></span></a></li>
-                                                <li><a href="<?php echo e($info->linkedIn); ?>"><span class="ico-circle"><i
-                                                                class="bi bi-linkedin"></i></span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('messages.send-message')->html();
+} elseif ($_instance->childHasBeenRendered('l1885465296-1')) {
+    $componentId = $_instance->getRenderedChildComponentId('l1885465296-1');
+    $componentTag = $_instance->getRenderedChildComponentTagName('l1885465296-1');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('l1885465296-1');
+} else {
+    $response = \Livewire\Livewire::mount('messages.send-message');
+    $html = $response->html();
+    $_instance->logRenderedChild('l1885465296-1', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
         </section><!-- End Contact Section -->
 
     </main><!-- End #main -->

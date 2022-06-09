@@ -72,6 +72,8 @@ Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
     Route::view('/EditPdf', 'pages.Dashboard.Pdf.EditPdf')->name('EditPdf');
     //Create Pdf page in dashboard
     Route::view('/CreatePdf', 'pages.Dashboard.Pdf.CreatePdf')->name('CreatePdf');
+    //ClientMessages page in dashboard
+    Route::view('/ClientMessages', 'pages.Dashboard.ClientMessages.ClientMessages')->name('ClientMessages');
 });
 
 require __DIR__ . '/auth.php';
