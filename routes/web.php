@@ -22,7 +22,7 @@ Route::get('/language/{language}', function () {
 //Single Post page
 Route::view('/post/{id}', 'pages.Post.post')->name('post');
 //Items page
-Route::view('/{language}/Items', 'pages.Items.items')->name('showAllItems');
+Route::view('language/{language}/items', 'pages.Items.items')->name('showAllItems');
 //Single Item page
 Route::view('/{language}/Item/{id}', 'pages.Items.ShowItem')->name('ShowItem');
 

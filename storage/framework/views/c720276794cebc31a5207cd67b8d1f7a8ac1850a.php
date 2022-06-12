@@ -17,7 +17,8 @@
                     <li><a class="nav-link scrollto active" href="#hero"><?php echo e(__('Home')); ?></a></li>
                     <li><a class="nav-link scrollto" href="#about"><?php echo e(__('About')); ?></a></li>
                     <li><a class="nav-link scrollto" href="#services"><?php echo e(__('Services')); ?></a></li>
-                    <li><a class="nav-link scrollto" href="<?php echo e(route('showAllItems',app()->getLocale())); ?>"><?php echo e(__('Items')); ?></a></li>
+                    <li><a class="nav-link scrollto"
+                            href="<?php echo e(route('showAllItems', app()->getLocale())); ?>"><?php echo e(__('Items')); ?></a></li>
                     <li><a class="nav-link scrollto" href="#blog"><?php echo e(__('Blog')); ?></a></li>
 
                     

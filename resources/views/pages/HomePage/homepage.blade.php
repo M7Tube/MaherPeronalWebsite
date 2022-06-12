@@ -229,13 +229,13 @@
                     class="float-element tooltip-left">
                     <i class="bi bi-whatsapp"></i>
                 </span></a>
-            <a href="https://api.whatsapp.com/send?phone=963936869890" target="blank"> <span
+            <a href="https://www.facebook.com/Mahershehadie" target="blank"> <span
                     class="float-element tooltip-left">
-                    <i class="bi bi-whatsapp"></i>
+                    <i class="bi bi-facebook"></i>
                 </span></a>
-            <a href="https://api.whatsapp.com/send?phone=963936869890" target="blank"> <span
+            <a href="https://www.instagram.com/maher_shehadie/" target="blank"> <span
                     class="float-element tooltip-left">
-                    <i class="bi bi-whatsapp"></i>
+                    <i class="bi bi-instagram"></i>
                 </span></a>
         </div>
     </div>
