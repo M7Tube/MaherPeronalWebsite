@@ -215,13 +215,67 @@
 
     </style> --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    @yield('head')
     @livewireStyles
 </head>
 
 <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            @if (app()->getLocale() == 'ar')
+                <h1 class="logo"><a
+                        href="{{ route('homepage', app()->getLocale()) }}">{{ $info->ar_peronal_name }}</a></h1>
+            @else
+                <h1 class="logo"><a
+                        href="{{ route('homepage', app()->getLocale()) }}">{{ $info->en_peronal_name }}</a></h1>
+            @endif
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>-->
 
-    @livewire('home-page.home-page')
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="{{ route('homepage','language'=>app()->getLocale()) }}">{{ __('Home') }}</a></li>
+                    <li><a class="nav-link scrollto" href="#about">{{ __('About') }}</a></li>
+                    <li><a class="nav-link scrollto" href="#services">{{ __('Services') }}</a></li>
+                    <li><a class="nav-link scrollto " href="#items">{{ __('Items') }}</a></li>
+                    <li><a class="nav-link scrollto " href="#blog">{{ __('Blog') }}</a></li>
+
+                    {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="#">Drop Down 1</a></li>
+                                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Deep Drop Down 1</a></li>
+                                        <li><a href="#">Deep Drop Down 2</a></li>
+                                        <li><a href="#">Deep Drop Down 3</a></li>
+                                        <li><a href="#">Deep Drop Down 4</a></li>
+                                        <li><a href="#">Deep Drop Down 5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Drop Down 2</a></li>
+                                <li><a href="#">Drop Down 3</a></li>
+                                <li><a href="#">Drop Down 4</a></li>
+                            </ul>
+                        </li> --}}
+                    <li><a class="nav-link scrollto" href="#contact">{{ __('Contact') }}</a></li>
+                    @if (app()->getLocale() == 'ar')
+                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'en') }}">English<i
+                                    class="bi bi-translate"></i></a></li>
+                    @else
+                        <li><a class="nav-link scrollto " href="{{ route('homepage', 'ar') }}">عربي<i
+                                    class="bi bi-translate"></i></a></li>
+                    @endif
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    @yield('body')
+
     <div class="floating-container">
         <div class="floating-button"><i class="bi bi-person-lines-fill"></i></div>
         <div class="element-container">
@@ -264,73 +318,6 @@
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-    {{-- <script>
-        mobiscroll.setOptions({
-            locale: mobiscroll
-                .localeAr, // Specify language like: locale: mobiscroll.localePl or omit setting to use default
-            theme: 'ios', // Specify theme like: theme: 'ios' or omit setting to use default
-            themeVariant: 'light' // More info about themeVariant: https://docs.mobiscroll.com/5-16-1/javascript/calendar#opt-themeVariant
-        });
-
-        var min = '2022-05-20T00:00';
-        var max = '2022-11-20T00:00';
-
-
-
-        mobiscroll.datepicker('#demo-booking-datetime', {
-            display: 'inline', // Specify display mode like: display: 'bottom' or omit setting to use default
-            controls: ['calendar',
-                'timegrid'
-            ], // More info about controls: https://docs.mobiscroll.com/5-16-1/javascript/calendar#opt-controls
-            min: min, // More info about min: https://docs.mobiscroll.com/5-16-1/javascript/calendar#opt-min
-            max: max, // More info about max: https://docs.mobiscroll.com/5-16-1/javascript/calendar#opt-max
-            minTime: '08:00',
-            maxTime: '20:00',
-            stepMinute: 720,
-            width: null, // More info about width: https://docs.mobiscroll.com/5-16-1/javascript/calendar#opt-width
-            onPageLoading: function(event,
-                inst
-            ) { // More info about onPageLoading: https://docs.mobiscroll.com/5-16-1/javascript/calendar#event-onPageLoading
-                getDatetimes(event.firstDay, function callback(bookings) {
-                    inst.setOptions({
-                        labels: bookings
-                            .labels, // More info about labels: https://docs.mobiscroll.com/5-16-1/javascript/calendar#opt-labels
-                        invalid: bookings
-                            .invalid // More info about invalid: https://docs.mobiscroll.com/5-16-1/javascript/calendar#opt-invalid
-                    });
-                });
-            }
-        });
-
-        function getDatetimes(day, callback) {
-            var invalid = [];
-            var labels = [];
-
-            mobiscroll.util.http.getJson('https://trial.mobiscroll.com/getbookingtime/?year=' + day.getFullYear() +
-                '&month=' + day.getMonth(),
-                function(bookings) {
-                    for (var i = 0; i < bookings.length; ++i) {
-                        var booking = bookings[i];
-                        var bDate = new Date(booking.d);
-
-                        if (booking.nr > 0) {
-                            labels.push({
-                                start: bDate,
-                                title: booking.nr + ' SPOTS',
-                                textColor: '#e1528f'
-                            });
-                            $.merge(invalid, booking.invalid);
-                        } else {
-                            invalid.push(bDate);
-                        }
-                    }
-                    callback({
-                        labels: labels,
-                        invalid: invalid
-                    });
-                }, 'jsonp');
-        }
-    </script> --}}
 
     <!-- Vendor2 JS Files -->
     <script src="{{ asset('vendor2/purecounter/purecounter.js') }}"></script>

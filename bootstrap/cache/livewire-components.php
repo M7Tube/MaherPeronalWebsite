@@ -21,6 +21,7 @@
   'dashboard.skills.skills' => 'App\\Http\\Livewire\\Dashboard\\Skills\\Skills',
   'dashboard.statistics.statistics' => 'App\\Http\\Livewire\\Dashboard\\Statistics\\Statistics',
   'home-page.home-page' => 'App\\Http\\Livewire\\HomePage\\HomePage',
+  'items.items' => 'App\\Http\\Livewire\\Items\\Items',
   'items.show-item' => 'App\\Http\\Livewire\\Items\\ShowItem',
   'messages.send-message' => 'App\\Http\\Livewire\\Messages\\SendMessage',
   'newsletter-email' => 'App\\Http\\Livewire\\NewsletterEmail',

@@ -19,10 +19,13 @@ Route::redirect('/', '/language/en');
 Route::get('/language/{language}', function () {
     return view('pages.HomePage.homepage');
 })->name('homepage');
-//Single Post page in dashboard
+//Single Post page
 Route::view('/post/{id}', 'pages.Post.post')->name('post');
-//Single Item page in dashboard
+//Items page
+Route::view('/{language}/Items', 'pages.Items.items')->name('showAllItems');
+//Single Item page
 Route::view('/{language}/Item/{id}', 'pages.Items.ShowItem')->name('ShowItem');
+
 Route::group(['prefix' => '{language}', 'middleware' => 'auth'], function () {
 
     Route::get('/dashboard', function () {
