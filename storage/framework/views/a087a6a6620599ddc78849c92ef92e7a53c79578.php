@@ -11,7 +11,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo e(asset('img/maherLogo.png')); ?>">
     <link rel="icon" type="image/png" href="<?php echo e(asset('img/maherLogo.png')); ?>">
-    <title><?php echo e(__('Maher Shehadie')); ?></title>
+    <title><?php echo e(__('Services')); ?></title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -191,16 +191,16 @@
 
     <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('items.items')->html();
-} elseif ($_instance->childHasBeenRendered('QbCqGw2')) {
-    $componentId = $_instance->getRenderedChildComponentId('QbCqGw2');
-    $componentTag = $_instance->getRenderedChildComponentTagName('QbCqGw2');
+    $html = \Livewire\Livewire::mount('services.services')->html();
+} elseif ($_instance->childHasBeenRendered('l6AM7aZ')) {
+    $componentId = $_instance->getRenderedChildComponentId('l6AM7aZ');
+    $componentTag = $_instance->getRenderedChildComponentTagName('l6AM7aZ');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('QbCqGw2');
+    $_instance->preserveRenderedChild('l6AM7aZ');
 } else {
-    $response = \Livewire\Livewire::mount('items.items');
+    $response = \Livewire\Livewire::mount('services.services');
     $html = $response->html();
-    $_instance->logRenderedChild('QbCqGw2', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('l6AM7aZ', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -240,4 +240,4 @@ echo $html;
 </body>
 
 </html>
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Items/items.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Services/services.blade.php ENDPATH**/ ?>

@@ -26,4 +26,5 @@
   'messages.send-message' => 'App\\Http\\Livewire\\Messages\\SendMessage',
   'newsletter-email' => 'App\\Http\\Livewire\\NewsletterEmail',
   'post.post' => 'App\\Http\\Livewire\\Post\\Post',
+  'services.services' => 'App\\Http\\Livewire\\Services\\Services',
 );

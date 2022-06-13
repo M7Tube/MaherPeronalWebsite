@@ -1,6 +1,6 @@
 <div>
     <section id="items" class="portfolio-mf  route">
-        <div class="container">
+        <div class="container mb-5">
             
             <div class="row">
                 <div class="title-box text-center">
@@ -55,6 +55,8 @@
                     <h4 class="text-center"><?php echo e(__('Empty')); ?></h4>
                 <?php endif; ?>
             </div>
+            <?php echo e($items->links()); ?>
+
         </div>
     </section><!-- End Portfolio Section -->
 </div>

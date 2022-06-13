@@ -1,6 +1,6 @@
 <div>
     <section id="items" class="portfolio-mf  route">
-        <div class="container">
+        <div class="container mb-5">
             {{-- <div class="row">
                 <div class="col-sm-12">
                     <div class="title-box text-center">
@@ -82,6 +82,7 @@
                     <h4 class="text-center">{{ __('Empty') }}</h4>
                 @endforelse
             </div>
+            {{ $items->links() }}
         </div>
     </section><!-- End Portfolio Section -->
 </div>
