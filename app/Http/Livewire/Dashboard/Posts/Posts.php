@@ -41,7 +41,7 @@ class Posts extends Component
             [
                 'P' => Post::search($this->search)
                     ->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
-                    ->simplePaginate(5),
+                    ->paginate(5),
             ]
         );
     }
