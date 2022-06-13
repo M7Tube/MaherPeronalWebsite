@@ -179,8 +179,6 @@
             box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
         }
     </style>
-    <!-- Mobiscroll JS and CSS Includes -->
-    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <?php echo \Livewire\Livewire::styles(); ?>
@@ -191,16 +189,16 @@
 
     <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('services.services')->html();
-} elseif ($_instance->childHasBeenRendered('l6AM7aZ')) {
-    $componentId = $_instance->getRenderedChildComponentId('l6AM7aZ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('l6AM7aZ');
+    $html = \Livewire\Livewire::mount('post.all-post')->html();
+} elseif ($_instance->childHasBeenRendered('Bh6wrKX')) {
+    $componentId = $_instance->getRenderedChildComponentId('Bh6wrKX');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Bh6wrKX');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('l6AM7aZ');
+    $_instance->preserveRenderedChild('Bh6wrKX');
 } else {
-    $response = \Livewire\Livewire::mount('services.services');
+    $response = \Livewire\Livewire::mount('post.all-post');
     $html = $response->html();
-    $_instance->logRenderedChild('l6AM7aZ', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('Bh6wrKX', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -240,4 +238,4 @@ echo $html;
 </body>
 
 </html>
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Services/services.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Post/AllPost.blade.php ENDPATH**/ ?>

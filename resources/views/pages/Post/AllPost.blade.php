@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 
-<?php if(app()->getLocale() == 'ar'): ?>
+@if (app()->getLocale() == 'ar')
     <html lang="ar" dir="rtl">
-<?php else: ?>
+@else
     <html lang="en" dir="ltr">
-<?php endif; ?>
+@endif
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo e(asset('img/maherLogo.png')); ?>">
-    <link rel="icon" type="image/png" href="<?php echo e(asset('img/maherLogo.png')); ?>">
-    <title><?php echo e(__('Maher Shehadie')); ?></title>
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/maherLogo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/maherLogo.png') }}">
+    <title>{{ __('Services') }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    
+    {{-- <link href="{{ asset('/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon"> --}}
 
-    <link href="<?php echo e(asset('vendor2/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(asset('vendor2/bootstrap-icons/bootstrap-icons.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(asset('vendor2/glightbox/css/glightbox.min.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(asset('vendor2/swiper/swiper-bundle.min.css')); ?>" rel="stylesheet">
+    <link href="{{ asset('vendor2/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor2/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor2/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor2/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-    <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <style>
-        @import  url("https://fonts.googleapis.com/css?family=Roboto");
+        @import url("https://fonts.googleapis.com/css?family=Roboto");
 
         @-webkit-keyframes come-in {
             0% {
@@ -51,7 +52,7 @@
             }
         }
 
-        @keyframes  come-in {
+        @keyframes come-in {
             0% {
                 -webkit-transform: translatey(100px);
                 transform: translatey(100px);
@@ -179,31 +180,14 @@
             box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
         }
     </style>
-    <!-- Mobiscroll JS and CSS Includes -->
-    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <?php echo \Livewire\Livewire::styles(); ?>
-
+    @livewireStyles
 </head>
 
 <body>
 
-    <?php
-if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('items.items')->html();
-} elseif ($_instance->childHasBeenRendered('QbCqGw2')) {
-    $componentId = $_instance->getRenderedChildComponentId('QbCqGw2');
-    $componentTag = $_instance->getRenderedChildComponentTagName('QbCqGw2');
-    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('QbCqGw2');
-} else {
-    $response = \Livewire\Livewire::mount('items.items');
-    $html = $response->html();
-    $_instance->logRenderedChild('QbCqGw2', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
-}
-echo $html;
-?>
+    @livewire('post.all-post')
     <div class="floating-container">
         <div class="floating-button"><i class="bi bi-person-lines-fill"></i></div>
         <div class="element-container">
@@ -226,18 +210,16 @@ echo $html;
 
 
     <!-- Vendor2 JS Files -->
-    <script src="<?php echo e(asset('vendor2/purecounter/purecounter.js')); ?>"></script>
-    <script src="<?php echo e(asset('vendor2/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('vendor2/glightbox/js/glightbox.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('vendor2/swiper/swiper-bundle.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('vendor2/typed.js/typed.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('vendor2/php-email-form/validate.js')); ?>"></script>
+    <script src="{{ asset('vendor2/purecounter/purecounter.js') }}"></script>
+    <script src="{{ asset('vendor2/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor2/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('vendor2/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor2/typed.js/typed.min.js') }}"></script>
+    <script src="{{ asset('vendor2/php-email-form/validate.js') }}"></script>
 
     <!-- Template Main JS File -->
-    <script src="<?php echo e(asset('js/main.js')); ?>"></script>
-    <?php echo \Livewire\Livewire::scripts(); ?>
-
+    <script src="{{ asset('js/main.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>
-<?php /**PATH C:\Users\Abo Samer\Desktop\Work\Maher Project\laravel project\MaherPeronalWebsite\resources\views/pages/Items/items.blade.php ENDPATH**/ ?>

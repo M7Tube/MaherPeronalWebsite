@@ -25,6 +25,7 @@
   'items.show-item' => 'App\\Http\\Livewire\\Items\\ShowItem',
   'messages.send-message' => 'App\\Http\\Livewire\\Messages\\SendMessage',
   'newsletter-email' => 'App\\Http\\Livewire\\NewsletterEmail',
+  'post.all-post' => 'App\\Http\\Livewire\\Post\\AllPost',
   'post.post' => 'App\\Http\\Livewire\\Post\\Post',
   'services.services' => 'App\\Http\\Livewire\\Services\\Services',
 );

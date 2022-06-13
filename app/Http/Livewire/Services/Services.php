@@ -12,6 +12,8 @@ class Services extends Component
 {
     use LivewireWithPagination;
 
+    public $info;
+
     public function mount()
     {
         $this->info = AppSettings::first();

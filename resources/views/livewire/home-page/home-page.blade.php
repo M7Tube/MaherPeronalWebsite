@@ -16,10 +16,12 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">{{ __('Home') }}</a></li>
                     <li><a class="nav-link scrollto" href="#about">{{ __('About') }}</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('showAllServices', app()->getLocale()) }}">{{ __('Services') }}</a></li>
+                    <li><a class="nav-link scrollto"
+                            href="{{ route('showAllServices', app()->getLocale()) }}">{{ __('Services') }}</a></li>
                     <li><a class="nav-link scrollto"
                             href="{{ route('showAllItems', app()->getLocale()) }}">{{ __('Items') }}</a></li>
-                    <li><a class="nav-link scrollto" href="#blog">{{ __('Blog') }}</a></li>
+                    <li><a class="nav-link scrollto"
+                            href="{{ route('showAllPosts', app()->getLocale()) }}">{{ __('Blog') }}</a></li>
 
                     {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
